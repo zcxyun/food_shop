@@ -1,5 +1,5 @@
 from flask import render_template, request, jsonify, url_for, g, redirect
-from flask_login import login_user, login_required, current_user
+from flask_login import login_user, login_required, current_user, logout_user
 
 from app import db
 from app.libs.error_codes import AuthFailed, Success
@@ -54,3 +54,10 @@ def reset_pwd():
         return Success(msg='密码修改成功')
 
     return render_template('user/reset_pwd.html', current='reset_pwd')
+
+
+@cms.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('cms.user+login'))

@@ -28,7 +28,7 @@
                         <span class="nav-label">仪表盘</span></a>
                 </li>
                 <li class="account">
-                    <a href=""><i class="fa fa-user fa-lg"></i> <span
+                    <a href="{{url_for('cms.user+edit')}}"><i class="fa fa-user fa-lg"></i> <span
                             class="nav-label">账号管理</span></a>
                 </li>
                 <li class="food">
@@ -73,7 +73,7 @@
                         <ul class="dropdown-menu dropdown-messages">
                             <li>
                                 <div class="dropdown-messages-box">
-                                    姓名：{{ current_user.nickname }} <a href=""
+                                    姓名：{{ current_user.nickname }} <a href="{{url_for('cms.user+edit')}}"
                                                                       class="pull-right">编辑</a>
                                 </div>
                             </li>
@@ -86,10 +86,10 @@
                             <li class="divider"></li>
                             <li>
                                 <div class="link-block text-center">
-                                    <a class="pull-left" href="">
+                                    <a class="pull-left" href="{{url_for('cms.user+reset_pwd')}}">
                                         <i class="fa fa-lock"></i> 修改密码
                                     </a>
-                                    <a class="pull-right" href="">
+                                    <a class="pull-right" href="{{url_for('cms.user+logout')}}">
                                         <i class="fa fa-sign-out"></i> 退出
                                     </a>
                                 </div>
