@@ -5,6 +5,9 @@ var user_edit_ops = {
     },
     eventBind: function () {
         var that = this;
+        var nickname = $(".user_edit_wrap input[name=nickname]");
+        var email = $(".user_edit_wrap input[name=email]");
+
         $(".user_edit_wrap .save").click(function () {
             var btn_target = $(this);
             if (btn_target.hasClass("disabled")) {
@@ -12,21 +15,15 @@ var user_edit_ops = {
                 return;
             }
 
-            var nickname_target = $(".user_edit_wrap input[name=nickname]");
-            var nickname = nickname_target.val();
-
-            var email_target = $(".user_edit_wrap input[name=email]");
-            var email = email_target.val();
-
-            if (!that.validate(nickname_target, nickname, email_target, email)) {
+            if (!that.validate(nickname, email)) {
                 return;
             }
 
             btn_target.addClass("disabled");
 
             var data = {
-                nickname: nickname,
-                email: email
+                nickname: nickname.val(),
+                email: email.val()
             };
 
             $.ajax({
@@ -40,7 +37,16 @@ var user_edit_ops = {
                     });
                 },
                 error: function (res) {
-                    common_ops.alert(res.responseJSON.msg, null);
+                    // common_ops.alert(res.responseJSON.msg, null);
+                    const data = {
+                        nickname: nickname,
+                        email: email
+                    }
+                    msg = res.responseJSON.msg;
+                    for (const i in msg) {
+                        common_ops.tip(msg[i][0], data[i]);
+                        break;
+                    }
                 },
                 complete: function () {
                     btn_target.removeClass("disabled");
@@ -48,13 +54,17 @@ var user_edit_ops = {
             });
         });
     },
-    validate: function (nickname_target, nickname, email_target, email) {
-        if (!nickname || !(nickname.length >= 3 && nickname.length <= 22)) {
-            common_ops.tip("昵称必须为 3 - 22 个字符", nickname_target);
+    validate: function (nickname, email) {
+        const nicknameValue = nickname.val();
+        const emailValue = email.val();
+        const emailReg = /^\w{3,}(\.\w+)*@[A-z 0-9]+(\.[A-z]{2,5}){1,2}$/;
+
+        if (!nicknameValue || !(nicknameValue.length >= 3 && nicknameValue.length <= 22)) {
+            common_ops.tip("昵称必须为 3 - 22 个字符", nickname);
             return false;
         }
-        if (!email || email.length < 4) {
-            common_ops.tip("请输入符合规范的邮箱", email_target);
+        if (!emailValue || !emailReg.test(emailValue)) {
+            common_ops.tip("电子邮件格式不符合规范", email);
             return false;
         }
         return true;

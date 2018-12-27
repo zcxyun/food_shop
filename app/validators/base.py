@@ -13,6 +13,6 @@ class BaseForm(Form):
     def validate(self):
         valid = super().validate()
         if not valid:
-            msg = list(self.errors.values())[0][0]
+            msg = self.errors
             raise ParameterException(msg=msg)
         return self

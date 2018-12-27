@@ -1,4 +1,4 @@
-from flask import render_template, request, jsonify, url_for, g
+from flask import render_template, request, jsonify, url_for, g, redirect
 from flask_login import login_user, login_required, current_user
 
 from app import db
@@ -13,6 +13,8 @@ cms = Redprint('user')
 
 @cms.route('/login', methods=['POST', 'GET'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('cms.index+index'))
     if request.method == 'POST':
         form = LoginForm().validate()
         user = User.verify(form.login_name.data, form.login_pwd.data)
@@ -44,8 +46,8 @@ def edit():
 def reset_pwd():
     if request.method == 'POST':
         form = ResetPwdForm().validate()
-        if form.new_password.data == form.old_password.data:
-            raise AuthFailed(msg='新密码不能与原密码相同')
+        # if form.new_password.data == form.old_password.data:
+        #     raise AuthFailed(msg='新密码不能与原密码相同')
         with db.auto_commit():
             current_user.password = form.new_password.data
             db.session.add(current_user)
