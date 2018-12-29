@@ -6,7 +6,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from app import login_manager
 from app.libs.error_codes import AuthFailed, Forbidden
 from app.libs.scope import is_in_scope
-from app.libs.token import verify_token
 from app.models.base import Base
 
 

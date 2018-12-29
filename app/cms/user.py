@@ -1,12 +1,11 @@
-from flask import render_template, request, jsonify, url_for, g, redirect
+from flask import render_template, request, jsonify, url_for, redirect
 from flask_login import login_user, login_required, current_user, logout_user
 
 from app import db
-from app.libs.error_codes import AuthFailed, Success
+from app.libs.error_codes import Success
 from app.libs.redprint import Redprint
 from app.models.user import User
-from app.validators.cms_forms import LoginForm, EditForm, ResetPwdForm
-from app.view_model.base import BaseViewModel
+from app.validators.cms_forms.user_forms import LoginForm, EditForm, ResetPwdForm
 
 cms = Redprint('user')
 
@@ -37,7 +36,6 @@ def edit():
             current_user.email = form.email.data
             db.session.add(current_user)
         return Success(msg='信息修改成功')
-
     return render_template('user/edit.html', current='edit')
 
 
@@ -46,13 +44,10 @@ def edit():
 def reset_pwd():
     if request.method == 'POST':
         form = ResetPwdForm().validate()
-        # if form.new_password.data == form.old_password.data:
-        #     raise AuthFailed(msg='新密码不能与原密码相同')
         with db.auto_commit():
             current_user.password = form.new_password.data
             db.session.add(current_user)
         return Success(msg='密码修改成功')
-
     return render_template('user/reset_pwd.html', current='reset_pwd')
 
 

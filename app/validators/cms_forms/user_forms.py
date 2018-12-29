@@ -6,8 +6,8 @@ from app.validators.base import BaseForm
 
 
 class LoginForm(BaseForm):
-    login_name = StringField(validators=[DataRequired(message='手机号不允许为空')])
-    #                                      Regexp(r'^1[0-9]{10}$', message='手机号码必须是11位数字')])
+    login_name = StringField(validators=[DataRequired(message='用户名不允许为空')])
+    #                                      Regexp(r'^1[0-9]{10}$', message='用户名码必须是11位手机号码')])
     login_pwd = PasswordField(validators=[DataRequired(message='密码不能为空'),
                                           Regexp(r'^[A-Za-z0-9_]{6,22}$',
                                                  message='密码格式不对，必须为6到22位字母，数字或下划线')

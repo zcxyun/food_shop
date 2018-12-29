@@ -8,7 +8,8 @@ class BaseForm(Form):
     def __init__(self):
         data = request.get_json(silent=True)
         args = request.values.to_dict()
-        super(BaseForm, self).__init__(data=data, **args)
+        view_args = request.view_args
+        super(BaseForm, self).__init__(data=data, **args, **view_args)
 
     def validate(self):
         valid = super().validate()

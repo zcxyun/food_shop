@@ -16,19 +16,19 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="profile-element text-center">
-                        <img alt="image" class="img-circle" src="{{ url_for('static', filename='images/common/logo.png') }}"/>
-                        <p class="text-muted">编程浪子</p>
+                        <!--<img alt="image" class="img-circle" src="{{ url_for('static', filename='images/common/logo.png') }}"/>-->
+                        <p class="text-muted">订餐管理</p>
                     </div>
                     <div class="logo-element">
                         <img alt="image" class="img-circle" src="{{ url_for('static', filename='images/common/logo.png') }}"/>
                     </div>
                 </li>
                 <li class="default">
-                    <a href=""><i class="fa fa-dashboard fa-lg"></i>
+                    <a href="{{ url_for('cms.index+index') }}"><i class="fa fa-dashboard fa-lg"></i>
                         <span class="nav-label">仪表盘</span></a>
                 </li>
                 <li class="account">
-                    <a href="{{url_for('cms.user+edit')}}"><i class="fa fa-user fa-lg"></i> <span
+                    <a href="{{ url_for('cms.account+index') }}"><i class="fa fa-user fa-lg"></i> <span
                             class="nav-label">账号管理</span></a>
                 </li>
                 <li class="food">
@@ -38,7 +38,7 @@
                 <li class="member">
                     <a href=""><i class="fa fa-group fa-lg"></i> <span
                             class="nav-label">会员列表</span></a>
-                </li>
+                </li>‍
                 <li class="finance">
                     <a href=""><i class="fa fa-rmb fa-lg"></i> <span
                             class="nav-label">财务管理</span></a>
@@ -62,7 +62,7 @@
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
 						<span class="m-r-sm text-muted welcome-message">
-                            欢迎使用编程浪子订餐管理管理后台
+                            欢迎使用订餐小程序管理后台
                         </span>
                     </li>
                     <li class="dropdown user_info">

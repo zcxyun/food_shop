@@ -13,14 +13,16 @@ def admin_get_user(uid):
 
 @api.route('', methods=['GET'])
 def get_user():
-    user = User()
-    user.mobile = '18749592518'
-    user.nickname = '小汐'
-    user.login_name = '18749592518'
-    user.email = 'zcxyun@126.com'
-    user.password = '123456'
-    with db.auto_commit():
-        db.session.add(user)
+    for i in range(8, 50):
+
+        user = User()
+        user.mobile = '18749592' + str(i)
+        user.nickname = '小'+ str(i)
+        user.login_name = 'a'+ str(i)
+        user.email = 'zcxyun@1{}.com'.format(str(i))
+        user.password = '123456'
+        with db.auto_commit():
+            db.session.add(user)
 
     return Success()
 

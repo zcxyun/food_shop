@@ -1,89 +1,124 @@
 ;
 var account_set_ops = {
-    init:function(){
+    init: function () {
         this.eventBind();
     },
-    eventBind:function(){
-        $(".wrap_account_set .save").click(function(){
+    eventBind: function () {
+        var that = this;
+        var nickname = $(".wrap_account_set input[name=nickname]");
+        var mobile = $(".wrap_account_set input[name=mobile]");
+        var email = $(".wrap_account_set input[name=email]");
+        var login_name = $(".wrap_account_set input[name=login_name]");
+        var login_pwd = $(".wrap_account_set input[name=login_pwd]");
+
+        $(".wrap_account_set .save").click(function () {
             var btn_target = $(this);
             if( btn_target.hasClass("disabled") ){
                 common_ops.alert("正在处理!!请不要重复提交~~");
                 return;
             }
-
-            var nickname_target = $(".wrap_account_set input[name=nickname]");
-            var nickname = nickname_target.val();
-
-            var mobile_target = $(".wrap_account_set input[name=mobile]");
-            var mobile = mobile_target.val();
-
-            var email_target = $(".wrap_account_set input[name=email]");
-            var email = email_target.val();
-
-            var login_name_target = $(".wrap_account_set input[name=login_name]");
-            var login_name = login_name_target.val();
-
-            var login_pwd_target = $(".wrap_account_set input[name=login_pwd]");
-            var login_pwd = login_pwd_target.val();
-
-            if( nickname.length < 1 ){
-                common_ops.tip( "请输入符合规范的姓名~~",nickname_target );
+            if (!that.validate(login_name, login_pwd, nickname, email, mobile)) {
                 return false;
             }
-
-            if( mobile.length < 1 ){
-                common_ops.tip( "请输入符合规范的手机号码~~",mobile_target );
-                return false;
-            }
-
-            if(  email.length < 1 ){
-                common_ops.tip( "请输入符合规范的邮箱~~",email_target );
-                return false;
-            }
-
-            if( login_name.length < 1 ){
-                common_ops.tip( "请输入符合规范的登录用户名~~",login_name_target );
-                return false;
-            }
-
-            if( login_pwd.length < 6 ){
-                common_ops.tip( "请输入符合规范的登录密码~~",login_pwd_target );
-                return false;
-            }
-
             btn_target.addClass("disabled");
+            const id = $(".wrap_account_set input[name=id]").val() || 0;
 
-            var data = {
+            var data_node = {
                 nickname: nickname,
                 mobile: mobile,
                 email: email,
-                login_name:login_name,
-                login_pwd:login_pwd,
-                id:$(".wrap_account_set input[name=id]").val()
+                login_name: login_name,
+                login_pwd: login_pwd
             };
+            var data = {};
+            for (var i in data_node) {
+                data[i] = data_node[i].val()
+            }
 
             $.ajax({
-                url:common_ops.buildUrl( "/account/set" ),
-                type:'POST',
-                data:data,
-                dataType:'json',
-                success:function( res ){
-                    btn_target.removeClass("disabled");
-                    var callback = null;
-                    if( res.code == 200 ){
-                        callback = function(){
-                            window.location.href = common_ops.buildUrl("/account/index");
-                        }
+                url: common_ops.buildUrl("/cms/account/set/" + id),
+                type: 'POST',
+                data: data,
+                dataType: 'json',
+                success: function (res) {
+                    common_ops.alert(res.msg, function () {
+                        location.assign(common_ops.buildUrl("/cms/account/index"));
+                    });
+                },
+                error: function (res) {
+                    msg = res.responseJSON.msg;
+                    for (const i in msg) {
+                        common_ops.tip(msg[i][0], data_node[i]);
+                        break;
                     }
-                    common_ops.alert( res.msg,callback );
+                },
+                complete: function () {
+                    btn_target.removeClass("disabled");
                 }
             });
-
-
         });
+    },
+    validate: function (login_name, login_pwd, nickname, email, mobile) {
+        var login_name_val = login_name.val(),
+            login_pwd_val = login_pwd.val(),
+            nickname_val = nickname.val(),
+            email_val = email.val(),
+            mobile_val = mobile.val();
+
+        var login_name_reg = /^1[0-9]{10}$/,
+            login_pwd_reg = /^[A-Za-z0-9_]{6,22}$/,
+            email_reg = /^\w{3,}(\.\w+)*@[A-z 0-9]+(\.[A-z]{2,5}){1,2}$/;
+        mobile_reg = /^1[0-9]{10}$/;
+
+        // 昵称校验 -----------------------------------------------------------------
+        if (!nickname_val) {
+            common_ops.tip('昵称不允许为空', nickname);
+            return false;
+        }
+        if (!(nickname_val.length >= 3 && nickname_val.length <= 22)) {
+            common_ops.tip('昵称必须为 3 - 22 个字符', nickname);
+            return false;
+        }
+        // 手机号校验 -----------------------------------------------------------------
+        if (!mobile_val) {
+            common_ops.tip('手机号不允许为空', mobile);
+            return false;
+        }
+        // if (!mobile_reg.test(mobile_val)) {
+        //     common_ops.tip('手机号码必须是11位数字', mobile);
+        //     return false;
+        // }
+        // 电子邮件校验 -----------------------------------------------------------------
+        if (!email_val) {
+            common_ops.tip('电子邮箱不能为空', email);
+            return false;
+        }
+        if (!email_reg.test(email_val)) {
+            common_ops.tip('电子邮件格式不符合规范', email);
+            return false;
+        }
+        // 用户名校验 -----------------------------------------------------------------
+        if (!login_name_val) {
+            common_ops.tip('用户名不能为空', login_name);
+            return false;
+        }
+        // if (!login_name_reg.test(login_name_val)) {
+        //     common_ops.tip('用户名码必须是11位手机号码', login_name);
+        //     return false;
+        // }
+        // 密码校验 -----------------------------------------------------------------
+        if (!login_pwd_val) {
+            common_ops.tip('密码不能为空', login_pwd);
+            return false;
+        }
+        if (!login_pwd_reg.test(login_pwd_val)) {
+            common_ops.tip('密码格式不对，必须为6到22位字母，数字或下划线', login_pwd);
+            return false;
+        }
+        return true;
     }
 };
 
-$(document).ready( function(){
+$(document).ready(function () {
     account_set_ops.init();
-} );
+});

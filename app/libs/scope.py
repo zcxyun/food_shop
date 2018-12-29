@@ -26,7 +26,7 @@ class UserScope(Scope):
 
 
 class AdminScope(Scope):
-    allow_module = ['v1.user', 'cms.user', 'cms.index']
+    allow_module = ['v1.user', 'cms.user', 'cms.index', 'cms.account']
 
     # def __init__(self):
     #     self + UserScope()
