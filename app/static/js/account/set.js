@@ -13,7 +13,7 @@ var account_set_ops = {
 
         $(".wrap_account_set .save").click(function () {
             var btn_target = $(this);
-            if( btn_target.hasClass("disabled") ){
+            if (btn_target.hasClass("disabled")) {
                 common_ops.alert("正在处理!!请不要重复提交~~");
                 return;
             }
@@ -23,7 +23,7 @@ var account_set_ops = {
             btn_target.addClass("disabled");
             const id = $(".wrap_account_set input[name=id]").val() || 0;
 
-            var data_node = {
+            var dataNode = {
                 nickname: nickname,
                 mobile: mobile,
                 email: email,
@@ -31,8 +31,8 @@ var account_set_ops = {
                 login_pwd: login_pwd
             };
             var data = {};
-            for (var i in data_node) {
-                data[i] = data_node[i].val()
+            for (var i in dataNode) {
+                data[i] = dataNode[i].val()
             }
 
             $.ajax({
@@ -46,11 +46,7 @@ var account_set_ops = {
                     });
                 },
                 error: function (res) {
-                    msg = res.responseJSON.msg;
-                    for (const i in msg) {
-                        common_ops.tip(msg[i][0], data_node[i]);
-                        break;
-                    }
+                    errorTipOrAlert(res, 'tip', dataNode);
                 },
                 complete: function () {
                     btn_target.removeClass("disabled");
@@ -67,8 +63,8 @@ var account_set_ops = {
 
         var login_name_reg = /^1[0-9]{10}$/,
             login_pwd_reg = /^[A-Za-z0-9_]{6,22}$/,
-            email_reg = /^\w{3,}(\.\w+)*@[A-z 0-9]+(\.[A-z]{2,5}){1,2}$/;
-        mobile_reg = /^1[0-9]{10}$/;
+            email_reg = /^\w{3,}(\.\w+)*@[A-z 0-9]+(\.[A-z]{2,5}){1,2}$/,
+            mobile_reg = /^1[0-9]{10}$/;
 
         // 昵称校验 -----------------------------------------------------------------
         if (!nickname_val) {
@@ -84,10 +80,10 @@ var account_set_ops = {
             common_ops.tip('手机号不允许为空', mobile);
             return false;
         }
-        // if (!mobile_reg.test(mobile_val)) {
-        //     common_ops.tip('手机号码必须是11位数字', mobile);
-        //     return false;
-        // }
+        if (!mobile_reg.test(mobile_val)) {
+            common_ops.tip('手机号码必须是11位数字', mobile);
+            return false;
+        }
         // 电子邮件校验 -----------------------------------------------------------------
         if (!email_val) {
             common_ops.tip('电子邮箱不能为空', email);

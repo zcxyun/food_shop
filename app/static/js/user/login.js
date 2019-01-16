@@ -10,40 +10,33 @@ var user_login_ops = {
 
         $(".login_wrap .do-login").click(function () {
             var btn_target = $(this);
-            // if (btn_target.hasClass("disabled")) {
-            //     common_ops.alert("正在处理!!请不要重复提交~~");
-            //     return;
-            // }
-
+            if (btn_target.hasClass("disabled")) {
+                common_ops.alert("正在处理!!请不要重复提交~~");
+                return;
+            }
             if (!that.validate(login_name, login_pwd)) {
                 return;
             }
-
+            var dataNode = {
+                login_name: login_name,
+                login_pwd: login_pwd
+            };
+            var data = {
+                login_name: login_name.val(),
+                login_pwd: login_pwd.val()
+            };
             btn_target.addClass("disabled");
             var urlParams = getUrlParams()
             $.ajax({
                 url: common_ops.buildUrl("/cms/user/login", urlParams),
                 type: 'POST',
-                data: {'login_name': login_name.val(), 'login_pwd': login_pwd.val()},
+                data: data,
                 dataType: 'json',
                 success: function (res) {
                     location.assign(common_ops.buildUrl(res.next));
                 },
                 error: function (res) {
-                    const error_code = res.responseJSON.error_code;
-                    if (error_code === 1001 || error_code === 1005) {
-                        common_ops.alert(res.responseJSON.msg, null);
-                        return;
-                    }
-                    const data = {
-                        login_name: login_name,
-                        login_pwd: login_pwd
-                    }
-                    msg = res.responseJSON.msg;
-                    for (const i in msg) {
-                        common_ops.tip(msg[i][0], data[i]);
-                        break;
-                    }
+                    errorTipOrAlert(res, 'tip', dataNode);
                 },
                 complete: function () {
                     btn_target.removeClass("disabled");

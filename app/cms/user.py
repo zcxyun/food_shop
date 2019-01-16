@@ -1,10 +1,11 @@
 from flask import render_template, request, jsonify, url_for, redirect
 from flask_login import login_user, login_required, current_user, logout_user
 
-from app import db
+from app.models import db
 from app.libs.error_codes import Success
 from app.libs.redprint import Redprint
-from app.models.user import User
+from app.models import AppAccessLog
+from app.models import User
 from app.validators.cms_forms.user_forms import LoginForm, EditForm, ResetPwdForm
 
 cms = Redprint('user')
@@ -18,6 +19,8 @@ def login():
         form = LoginForm().validate()
         user = User.verify(form.login_name.data, form.login_pwd.data)
         login_user(user)
+        # 添加登录日志
+        AppAccessLog.add_access_log()
         next_url = request.args.get('next')
         data = {'next': next_url}
         if not next_url or not next_url.startswith('/'):

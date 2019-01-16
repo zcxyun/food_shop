@@ -38,7 +38,7 @@
     "snapscreenInsertAlign": "none", /* 插入的图片浮动方式 */
 
     /* 抓取远程图片配置 */
-    "catcherLocalDomain": ["127.0.0.1", "localhost", "img.baidu.com"],
+    "catcherLocalDomain": ["127.0.0.1", "localhost", "image.baidu.com"],
     "catcherActionName": "catchimage", /* 执行抓取远程图片的action名称 */
     "catcherFieldName": "source", /* 提交的图片列表表单名称 */
     "catcherPathFormat": "/ueditor/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
@@ -73,7 +73,7 @@
     /* 列出指定目录下的图片 */
     "imageManagerActionName": "listimage", /* 执行图片管理的action名称 */
     "imageManagerListPath": "/ueditor/upload/image/", /* 指定要列出图片的目录 */
-    "imageManagerListSize": 20, /* 每次列出文件数量 */
+    "imageManagerListSize": 15, /* 每次列出文件数量 */
     "imageManagerUrlPrefix": "", /* 图片访问路径前缀 */
     "imageManagerInsertAlign": "none", /* 插入的图片浮动方式 */
     "imageManagerAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"], /* 列出的文件类型 */

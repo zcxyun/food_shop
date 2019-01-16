@@ -21,6 +21,11 @@ var user_edit_ops = {
 
             btn_target.addClass("disabled");
 
+            var dataNode = {
+                nickname: nickname,
+                email: email
+            };
+
             var data = {
                 nickname: nickname.val(),
                 email: email.val()
@@ -37,16 +42,7 @@ var user_edit_ops = {
                     });
                 },
                 error: function (res) {
-                    // common_ops.alert(res.responseJSON.msg, null);
-                    const data = {
-                        nickname: nickname,
-                        email: email
-                    }
-                    msg = res.responseJSON.msg;
-                    for (const i in msg) {
-                        common_ops.tip(msg[i][0], data[i]);
-                        break;
-                    }
+                    errorTipOrAlert(res, 'tip', dataNode);
                 },
                 complete: function () {
                     btn_target.removeClass("disabled");

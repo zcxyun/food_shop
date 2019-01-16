@@ -8,17 +8,17 @@ class APIException(HTTPException):
     code = 500
     error_code = 999
     msg = 'sorry, we make a mistake!'
-    data = {}
+    # data = {}
 
-    def __init__(self, code=None, error_code=None, msg=None, data=None, headers=None):
+    def __init__(self, code=None, error_code=None, msg=None, headers=None):
         if code:
             self.code = code
         if error_code:
             self.error_code = error_code
         if msg:
             self.msg = msg
-        if data:
-            self.data = data
+        # if data:
+        #     self.data = data
         super(APIException, self).__init__(msg, None)
 
     def get_headers(self, environ=None):
@@ -28,8 +28,8 @@ class APIException(HTTPException):
         dict = {
             'error_code': self.error_code,
             'msg': self.msg,
-            'request': request.method + ' ' + self.get_url_no_param(),
-            'data': self.data
+            'request': request.method + ' ' + self.get_url_no_param()
+            # 'data': self.data
         }
         text = json.dumps(dict)
         return text

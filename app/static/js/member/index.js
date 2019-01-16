@@ -21,21 +21,19 @@ var member_index_ops = {
         var callback = {
             'ok':function(){
                 $.ajax({
-                    url:common_ops.buildUrl( "/member/ops" ),
+                    url:common_ops.buildUrl( "/cms/member/ops/"+id ),
                     type:'POST',
                     data:{
-                        act:act,
-                        id:id
+                        act:act
                     },
                     dataType:'json',
                     success:function( res ){
-                        var callback = null;
-                        if( res.code == 200 ){
-                            callback = function(){
-                                window.location.href = window.location.href;
-                            }
-                        }
-                        common_ops.alert( res.msg,callback );
+                        common_ops.alert( res.msg,function () {
+                            location.reload();
+                        } );
+                    },
+                    error: function (res) {
+                        errorTipOrAlert(res, 'alert');
                     }
                 });
             },

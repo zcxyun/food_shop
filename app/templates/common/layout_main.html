@@ -19,9 +19,9 @@
                         <!--<img alt="image" class="img-circle" src="{{ url_for('static', filename='images/common/logo.png') }}"/>-->
                         <p class="text-muted">订餐管理</p>
                     </div>
-                    <div class="logo-element">
-                        <img alt="image" class="img-circle" src="{{ url_for('static', filename='images/common/logo.png') }}"/>
-                    </div>
+                    <!--<div class="logo-element">-->
+                        <!--<img alt="image" class="img-circle" src="{{ url_for('static', filename='images/common/logo.png') }}"/>-->
+                    <!--</div>-->
                 </li>
                 <li class="default">
                     <a href="{{ url_for('cms.index+index') }}"><i class="fa fa-dashboard fa-lg"></i>
@@ -32,11 +32,11 @@
                             class="nav-label">账号管理</span></a>
                 </li>
                 <li class="food">
-                    <a href=""><i class="fa fa-book fa-lg"></i> <span
+                    <a href="{{ url_for('cms.food+index') }}"><i class="fa fa-book fa-lg"></i> <span
                             class="nav-label">美餐管理</span></a>
                 </li>
                 <li class="member">
-                    <a href=""><i class="fa fa-group fa-lg"></i> <span
+                    <a href="{{ url_for('cms.member+index') }}"><i class="fa fa-group fa-lg"></i> <span
                             class="nav-label">会员列表</span></a>
                 </li>‍
                 <li class="finance">

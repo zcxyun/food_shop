@@ -2,23 +2,23 @@ from flask import request, current_app, render_template
 from flask_login import login_required
 from sqlalchemy import or_
 
-from app import db
-from app.libs.error_codes import ParameterException, Success, DeleteSuccess
+from app.libs.error_codes import Success, DeleteSuccess
 from app.libs.redprint import Redprint
-from app.models.app_access_log import AppAccessLog
-from app.models.user import User
+from app.models import AppAccessLog
+from app.models import User
+from app.models import db
 from app.validators.cms_forms.account_forms import IndexForm, SetForm, OpsForm
 
 cms = Redprint('account')
 
 
-@cms.route('/index', methods=['POST', 'GET'])
+@cms.route('/index')
 @login_required
 def index():
     form = IndexForm().validate()
     q, page, status = '%{}%'.format(form.query_kw.data), int(form.page.data), int(form.status.data)
     resp = {'query_kw': form.query_kw.data, 'status': form.status.data}
-    rule = or_(User.nickname.like(q), User.mobile.like(q))
+    rule = or_(User.nickname.ilike(q), User.mobile.ilike(q))
     query = User.query
     if status > -1:
         query = query.filter(User.status == status)
@@ -32,7 +32,7 @@ def index():
 @cms.route('/info/<int:id>')
 @login_required
 def info(id):
-    user = User.query.get_or_404(id)
+    user = User.query.get_or_404(id, msg='找不到指定用户')
     access_list = AppAccessLog.query.filter_by(id=id).order_by(AppAccessLog.id.desc()).limit(10).all()
     return render_template('account/info.html', user=user, access_list=access_list)
 
@@ -42,7 +42,7 @@ def info(id):
 def set(id):
     user = None
     if id:
-        user = User.query.get(id)
+        user = User.query.get_or_404_deleted(id, msg='对不起，找不到指定用户')
     if request.method == 'POST':
         form = SetForm().validate()
         with db.auto_commit():
@@ -64,14 +64,14 @@ def set(id):
 def ops(id):
     form = OpsForm().validate()
     act = form.act.data
-    user = User.query.get_or_404(id, msg='对不起，指定账号不存在')
+    user = User.query.get_or_404(id, msg='对不起，找不到指定用户')
     msg = ''
     with db.auto_commit():
         if act == 'remove':
-            user.status = 0
+            user.remove()
             msg = '删除成功'
         if act == 'recover':
-            user.status = 1
+            user.recover()
             msg = '恢复成功'
         db.session.add(user)
     return DeleteSuccess(msg=msg)

@@ -9,16 +9,28 @@
                     <select name="status" class="form-control inline">
                         <option value="-1">请选择状态</option>
                         {% for tmp_key in status_mapping %}
-                            <option value="{{ tmp_key }}" {% if tmp_key == search_con['status'] %} selected {% endif %}>{{ status_mapping[ tmp_key ] }}</option>
-                        {%  endfor %}
+                        <option value="{{ tmp_key }}" {% if tmp_key== resp[
+                        'status'] %} selected {% endif %}>{{ status_mapping[ tmp_key ] }}</option>
+                        {% endfor %}
                     </select>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" name="query_kw" placeholder="请输入分类名称" class="form-control"
+                               value="{{ resp['query_kw'] }}">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary search">
+                                <i class="fa fa-search"></i>搜索
+                            </button>
+                        </span>
+                    </div>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-lg-12">
                     <a class="btn btn-w-m btn-outline btn-primary pull-right"
-                       href="{{ buildUrl('/food/cat-set') }}">
+                       href="{{ url_for('cms.food+category_set', id=0) }}">
                         <i class="fa fa-plus"></i>分类
                     </a>
                 </div>
@@ -36,8 +48,8 @@
             </tr>
             </thead>
             <tbody>
-            {% if list %}
-                {% for item in list %}
+            {% if pagination.items %}
+            {% for item in pagination.items %}
             <tr>
                 <td>{{ item.id }}</td>
                 <td>{{ item.name }}</td>
@@ -45,15 +57,15 @@
                 <td>{{ item.weight }}</td>
                 <td>
 
-                     {%  if item.status == 1 %}
-                    <a class="m-l" href="{{ buildUrl('/food/cat-set') }}?id={{  item.id }}">
+                    {% if item.status == 1 %}
+                    <a class="m-l" href="{{ url_for('cms.food+category_set', id=item.id) }}">
                         <i class="fa fa-edit fa-lg"></i>
                     </a>
 
                     <a class="m-l remove" href="javascript:void(0);" data="{{  item.id }}">
                         <i class="fa fa-trash fa-lg"></i>
                     </a>
-                    {%  else %}
+                    {% else %}
                     <a class="m-l recover" href="javascript:void(0);" data="{{  item.id }}">
                         <i class="fa fa-rotate-left fa-lg"></i>
                     </a>
@@ -61,15 +73,19 @@
 
                 </td>
             </tr>
-                {% endfor %}
-            {%  else %}
-                <tr><td colspan="5">暂无数据</td></tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="5">暂无数据</td>
+            </tr>
             {% endif %}
             </tbody>
         </table>
+        <!--分页代码已被封装到统一模板文件中-->
+        {% include 'common/pagenation.html' %}
     </div>
 </div>
 {% endblock %}
 {% block js %}
-<script src="{{ buildStaticUrl('/js/food/cat.js') }}"></script>
+<script src="{{ url_for('static', filename='js/food/cat.js') }}"></script>
 {% endblock %}

@@ -1,62 +1,70 @@
 ;
 var food_cat_set_ops = {
-    init:function(){
+    init: function () {
         this.eventBind();
     },
-    eventBind:function(){
-        $(".wrap_cat_set .save").click(function(){
+    eventBind: function () {
+        var that = this;
+        var idNode = $(".wrap_cat_set input[name=id]");
+        var nameNode = $(".wrap_cat_set input[name=name]");
+        var weightNode = $(".wrap_cat_set input[name=weight]");
+
+
+        $(".wrap_cat_set .save").click(function () {
             var btn_target = $(this);
-            if( btn_target.hasClass("disabled") ){
+            if (btn_target.hasClass("disabled")) {
                 common_ops.alert("正在处理!!请不要重复提交~~");
                 return;
             }
-
-            var name_target = $(".wrap_cat_set input[name=name]");
-            var name = name_target.val();
-
-            var weight_target = $(".wrap_cat_set input[name=weight]");
-            var weight = weight_target.val();
-
-            if( name.length < 1 ){
-                common_ops.tip( "请输入符合规范的分类名称~~",name_target );
-                return false;
+            if (!that.validate(nameNode, weightNode)) {
+                return;
             }
-
-            if( parseInt( weight ) < 1 ){
-                common_ops.tip( "请输入符合规范的权重，并且至少要大于1~~",weight_target );
-                return false;
-            }
-
+            var dataNode = {
+                name: nameNode,
+                weight: weightNode
+            };
+            var data = {
+                name: nameNode.val(),
+                weight: weightNode.val()
+            };
+            id = idNode.val() || 0;
             btn_target.addClass("disabled");
 
-            var data = {
-                name: name,
-                weight: weight,
-                id:$(".wrap_cat_set input[name=id]").val()
-            };
-
             $.ajax({
-                url:common_ops.buildUrl( "/food/cat-set" ),
-                type:'POST',
-                data:data,
-                dataType:'json',
-                success:function( res ){
+                url: common_ops.buildUrl("/cms/food/category_set/" + id),
+                type: 'POST',
+                data: data,
+                dataType: 'json',
+                success: function (res) {
+                    common_ops.alert(res.msg, function () {
+                        location.assign(common_ops.buildUrl('/cms/food/category'))
+                    });
+                },
+                error: function (res) {
+                    errorTipOrAlert(res, 'tip', dataNode);
+                },
+                complete: function () {
                     btn_target.removeClass("disabled");
-                    var callback = null;
-                    if( res.code == 200 ){
-                        callback = function(){
-                            window.location.href = common_ops.buildUrl("/food/cat");
-                        }
-                    }
-                    common_ops.alert( res.msg,callback );
                 }
             });
-
-
         });
+    },
+    validate: function (nameNode, weightNode) {
+        var name = nameNode.val();
+        var weight = weightNode.val();
+        if (!(name.length >= 2 && name.length <= 10)) {
+            common_ops.tip("请输入2到10个字符分类名称", nameNode);
+            return false;
+        }
+
+        if (parseInt(weight) < 1) {
+            common_ops.tip("请输入符合规范的权重，并且大于或等于1", weightNode);
+            return false;
+        }
+        return true;
     }
 };
 
-$(document).ready( function(){
+$(document).ready(function () {
     food_cat_set_ops.init();
-} );
+});

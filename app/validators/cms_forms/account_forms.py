@@ -2,17 +2,15 @@ from wtforms import IntegerField, StringField, PasswordField, ValidationError
 from wtforms.validators import NumberRange, Length, Regexp, DataRequired, Email, AnyOf
 
 from app.models.user import User
-from app.validators.base import BaseForm
+from app.validators.base import BaseForm, IndexBaseForm, OpsBaseForm
 
 
-class IndexForm(BaseForm):
-    page = StringField(validators=[Regexp(r'[1-9][0-9]*')], default='1')
-    query_kw = StringField(validators=[Length(0, 24)], default='')
-    status = StringField(validators=[Regexp(r'(-1|1|0)')], default='-1')
+class IndexForm(IndexBaseForm):
+   pass
 
 
 class SetForm(BaseForm):
-    id = IntegerField(validators=[NumberRange(min=0)], default=0)
+    id = IntegerField(validators=[NumberRange(min=0, message='无效ID值')], default=0)
 
     nickname = StringField(validators=[DataRequired(message='昵称不允许为空'),
                                        Length(3, 22, message='昵称必须为 3 - 22 个字符')])
@@ -46,9 +44,8 @@ class SetForm(BaseForm):
             raise ValidationError('用户名已存在, 请再换一个试试')
 
 
-class OpsForm(BaseForm):
-    id = IntegerField(validators=[NumberRange(min=0)], default=0)
-    act = StringField(validators=[AnyOf(['remove', 'recover'], message='无效操作')])
+class OpsForm(OpsBaseForm):
+    pass
 
     # def validate_id(self, field):
     #     user = User.query.get(field.data)

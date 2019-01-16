@@ -17,24 +17,26 @@ class Scope:
 
 
 class UserScope(Scope):
-    # allow_api = ['v1.user+get_user', 'v1.user+delete_user']
-    forbidden = ['v1.user+admin_get_user', 'v1.user+admin_delete_user',
-                 'v1.user+admin_add_user', 'v1.user+admin_update_user']
+    # allow_api = ['api.v1.user+get_user', 'api.v1.user+delete_user']
+    forbidden = ['api.v1.user+admin_get_user', 'api.v1.user+admin_delete_user',
+                 'api.v1.user+admin_add_user', 'api.v1.user+admin_update_user']
 
     def __init__(self):
         self + AdminScope()
 
 
 class AdminScope(Scope):
-    allow_module = ['v1.user', 'cms.user', 'cms.index', 'cms.account']
+    allow_module = ['api.v1.member', 'api.v1.food', 'api.v1.address',
+                    'cms.user', 'cms.index', 'cms.account', 'cms.food', 'cms.member',
+                    'cms.upload']
 
     # def __init__(self):
     #     self + UserScope()
 
 
 # class SuperScope(Scope):
-#     allow_api = ['v1.user+super_get_user']
-#     allow_module = ['v1.user']
+#     allow_api = ['api.v1.user+super_get_user']
+#     allow_module = ['api.v1.user']
 
 # def __init__(self):
 #     self + UserScope() + AdminScope()

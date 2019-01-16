@@ -1,10 +1,10 @@
-from sqlalchemy import Column, Integer
+from sqlalchemy import Column, Integer, ForeignKey
 
-from app.models.base import Base
+from . import Base
 
 
 class MemberCart(Base):
     id = Column(Integer, primary_key=True)
-    member_id = Column(Integer, nullable=False, comment='会员ID')
+    member_id = Column(Integer, ForeignKey('member.id'), nullable=False, comment='会员ID')
     food_id = Column(Integer, nullable=False, comment='食物ID')
     quantity = Column(Integer, nullable=False, comment='食物数量')

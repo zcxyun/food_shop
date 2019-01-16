@@ -1,6 +1,5 @@
 from flask_login import LoginManager
-from app.models.base import db
-from app.app import Flask
+from .app import Flask
 
 login_manager = LoginManager()
 
@@ -17,7 +16,7 @@ def create_app():
 def register_blueprint(app):
     from app.api.v1 import create_blueprint_v1
     from app.cms import create_blueprint_cms
-    app.register_blueprint(create_blueprint_v1(), url_prefix='/v1')
+    app.register_blueprint(create_blueprint_v1(), url_prefix='/api/v1')
     app.register_blueprint(create_blueprint_cms(), url_prefix='/cms')
 
 
@@ -26,6 +25,7 @@ def register_plugins(app):
     login_manager.login_view = 'cms.user+login'
     login_manager.login_message = '请先登录'
 
+    from app.models import db
     db.init_app(app)
     with app.app_context():
         # db.drop_all()

@@ -9,7 +9,7 @@
                     <select name="status" class="form-control inline">
                         <option value="-1">请选择状态</option>
                         {% for tmp_key in status_mapping %}
-                        <option value="{{ tmp_key }}" {% if tmp_key == search_con['status']  %} selected {% endif %}>{{  status_mapping[ tmp_key ] }}</option>
+                        <option value="{{ tmp_key }}" {% if tmp_key == resp['status']  %} selected {% endif %}>{{  status_mapping[ tmp_key ] }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -17,14 +17,13 @@
                     <select name="cat_id" class="form-control inline">
                         <option value="0">请选择分类</option>
                         {% for tmp_key in cat_mapping %}
-                            <option value="{{ tmp_key }}" {% if tmp_key|string == search_con['cat_id']  %} selected {% endif %} >{{ cat_mapping[ tmp_key].name  }}</option>
+                            <option value="{{ tmp_key }}" {% if tmp_key|string == resp['cat_id'] %} selected {% endif %} >{{ cat_mapping[ tmp_key]  }}</option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
-                        <input type="text" name="mix_kw" placeholder="请输入关键字" class="form-control" value="{{ search_con['mix_kw'] }}">
-                        <input type="hidden" name="p" value="{{ search_con['p'] }}">
+                        <input type="text" name="mix_kw" placeholder="请输入关键字" class="form-control" value="{{ resp['mix_kw'] }}">
                         <span class="input-group-btn">
                             <button type="button" class="btn  btn-primary search">
                                 <i class="fa fa-search"></i>搜索
@@ -36,7 +35,7 @@
             <hr>
             <div class="row">
                 <div class="col-lg-12">
-                    <a class="btn btn-w-m btn-outline btn-primary pull-right" href="{{ buildUrl('/food/set') }}">
+                    <a class="btn btn-w-m btn-outline btn-primary pull-right" href="{{ url_for('cms.food+set', id=0) }}">
                         <i class="fa fa-plus"></i>美食
                     </a>
                 </div>
@@ -55,20 +54,20 @@
             </tr>
             </thead>
             <tbody>
-             {% if list %}
-                {% for item in list %}
+             {% if pagination.items %}
+                {% for item in pagination.items %}
             <tr>
                 <td>{{ item.name }}</td>
-                <td>{{ cat_mapping[ item.cat_id].name  }}</td>
+                <td>{{ cat_mapping[ item.cat_id]  }}</td>
                 <td>{{ item.price }}</td>
                 <td>{{ item.stock }}</td>
                 <td>{{ item.tags }}</td>
                 <td>
-                    <a href="{{ buildUrl('/food/info') }}?id={{ item.id  }}">
+                    <a href="{{ url_for('cms.food+info', id=item.id) }}">
                         <i class="fa fa-eye fa-lg"></i>
                     </a>
                      {%  if item.status == 1 %}
-                    <a class="m-l" href="{{ buildUrl('/food/set') }}?id={{ item.id  }}">
+                    <a class="m-l" href="{{ url_for('cms.food+set', id=item.id) }}">
                         <i class="fa fa-edit fa-lg"></i>
                     </a>
 
@@ -94,5 +93,5 @@
 </div>
 {% endblock %}
 {% block js %}
-<script src="{{ buildStaticUrl('/js/food/index.js') }}"></script>
+<script src="{{ url_for('static', filename='js/food/index.js') }}"></script>
 {% endblock %}

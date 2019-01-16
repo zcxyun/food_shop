@@ -35,14 +35,14 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">封面图:</label>
                 <div class="col-lg-10">
-                    <form class="upload_pic_wrap" target="upload_file" enctype="multipart/form-data" method="POST" action="{{ buildUrl('/upload/pic') }}">
+                    <form class="upload_pic_wrap" target="upload_file" enctype="multipart/form-data" method="POST" action="{{ url_for('cms.upload+upload_pic') }}">
                         <div class="upload_wrap pull-left">
                             <i class="fa fa-upload fa-2x"></i>
                             <input type="file" name="pic" accept="image/png, image/jpeg, image/jpg,image/gif">
                         </div>
                         {% if info and info.main_image %}
                         <span class="pic-each">
-                            <img src="{{ buildImageUrl( info.main_image ) }}"/>
+                            <img src="{{ url_for('static', filename='upload/'+info.main_image ) }}"/>
                             <span class="fa fa-times-circle del del_image" data="{{ info.main_image }}"></span>
                         </span>
                         {% endif %}
@@ -67,7 +67,7 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">标签:</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="tags" value="{{ info.tags }}">
+                    <div><input type="text" class="form-control" name="tags" value="{{ info.tags }}"></div>
                 </div>
             </div>
             <div class="hr-line-dashed"></div>
@@ -83,20 +83,20 @@
 <iframe name="upload_file" class="hide"></iframe>
 {% endblock %}
 {%  block css %}
-<link href="{{ buildStaticUrl( '/plugins/select2/select2.min.css' ) }}" rel="stylesheet">
-<link href="{{ buildStaticUrl( '/plugins/tagsinput/jquery.tagsinput.min.css' ) }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='plugins/select2/select2.min.css' ) }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='plugins/tagsinput/jquery.tagsinput.min.css' ) }}" rel="stylesheet">
 {% endblock %}
 {% block js %}
-<script src="{{ buildStaticUrl( '/plugins/ueditor/ueditor.config.js' ) }}"></script>
-<script src="{{ buildStaticUrl( '/plugins/ueditor/ueditor.all.min.js' ) }}"></script>
-<script src="{{ buildStaticUrl( '/plugins/ueditor/lang/zh-cn/zh-cn.js' ) }}"></script>
+<script src="{{ url_for('static', filename='plugins/ueditor/ueditor.config.js' ) }}"></script>
+<script src="{{ url_for('static', filename='plugins/ueditor/ueditor.all.min.js' ) }}"></script>
+<script src="{{ url_for('static', filename='plugins/ueditor/lang/zh-cn/zh-cn.js' ) }}"></script>
 
-<script src="{{ buildStaticUrl( '/plugins/select2/select2.pinyin.js' ) }}"></script>
-<script src="{{ buildStaticUrl( '/plugins/select2/zh-CN.js' ) }}"></script>
-<script src="{{ buildStaticUrl( '/plugins/select2/pinyin.core.js' ) }}"></script>
+<script src="{{ url_for('static', filename='plugins/select2/select2.pinyin.js' ) }}"></script>
+<script src="{{ url_for('static', filename='plugins/select2/zh-CN.js' ) }}"></script>
+<script src="{{ url_for('static', filename='plugins/select2/pinyin.core.js' ) }}"></script>
 
-<script src="{{ buildStaticUrl( '/plugins/tagsinput/jquery.tagsinput.min.js' ) }}"></script>
+<script src="{{ url_for('static', filename='plugins/tagsinput/jquery.tagsinput.min.js' ) }}"></script>
 
 
-<script src="{{ buildStaticUrl( '/js/food/set.js' ) }}"></script>
+<script src="{{ url_for('static', filename='js/food/set.js' ) }}"></script>
 {% endblock %}

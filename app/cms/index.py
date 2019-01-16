@@ -5,7 +5,7 @@ from flask_login import login_required
 
 from app.libs.redprint import Redprint
 from app.libs.utils import now_timestamp, before_timestamp
-from app.models.stat_daily_site import StatDailySite
+from app.models import StatDailySite
 from app.view_model.index import IndexViewModel
 
 cms = Redprint('index')
@@ -23,7 +23,6 @@ def index():
 
     data = index_vm.data
     if list:
-
         for item in list:
             data['finance']['month'] += item.total_pay_money
             data['member']['month_new'] += item.total_new_member_count

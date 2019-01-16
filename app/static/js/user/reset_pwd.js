@@ -21,13 +21,16 @@ var mod_pwd_ops = {
             }
 
             btn_target.addClass("disabled");
-
+            var dataNode = {
+                old_password: old_password,
+                new_password: new_password,
+                confirm_password: confirm_password
+            };
             var data = {
                 old_password: old_password.val(),
                 new_password: new_password.val(),
                 confirm_password: confirm_password.val()
             };
-
             $.ajax({
                 url: common_ops.buildUrl("/cms/user/reset_pwd"),
                 type: 'POST',
@@ -39,16 +42,7 @@ var mod_pwd_ops = {
                     });
                 },
                 error: function (res) {
-                    const data = {
-                        old_password: old_password,
-                        new_password: new_password,
-                        confirm_password: confirm_password
-                    }
-                    msg = res.responseJSON.msg;
-                    for (const i in msg) {
-                        common_ops.tip(msg[i][0], data[i]);
-                        break;
-                    }
+                    errorTipOrAlert(res, 'tip', dataNode);
                 },
                 complete: function () {
                     btn_target.removeClass("disabled");

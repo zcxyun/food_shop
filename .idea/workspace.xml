@@ -3,22 +3,131 @@
   <component name="ChangeListManager">
     <list default="true" id="3d2d6280-54f4-40d4-ad8c-b860e281bc94" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/token.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/user.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/cms/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/cms/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cms/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/cms/account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cms/chart.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/cms/chart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cms/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/cms/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cms/intercepter.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/cms/intercepter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/cms/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/cms/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/secure.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/secure.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/error.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/error.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/libs/scope.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/scope.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/token.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/token.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/app_access_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/app_access_log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/app_error_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/app_error_log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/food.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/food.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/food_cat.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/food_cat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/food_sale_change_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/food_sale_change_log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/food_stock_change_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/food_stock_change_log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/member.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/member.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/member_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/member_address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/member_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/member_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/member_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/member_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/member_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/member_comment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/order.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/order_food.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/order_food.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/stat_daily_food.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/stat_daily_food.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/stat_daily_member.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/stat_daily_member.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/stat_daily_site.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/stat_daily_site.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/wx_share_history.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/wx_share_history.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/js/account/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/account/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/js/account/set.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/account/set.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/account/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/account/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/account/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/account/info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/account/set.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/account/set.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/food/cat.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/food/cat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/food/cat_set.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/food/cat_set.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/food/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/food/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/food/set.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/food/set.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/member/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/member/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/user/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/user/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/user/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/user/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/user/reset_pwd.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/user/reset_pwd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/plugins/ueditor/dialogs/image/image.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/plugins/ueditor/dialogs/image/image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/plugins/ueditor/upload_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/plugins/ueditor/upload_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/00d6d87622e948a0a9bdeabb037dc78a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/0198d013f0534fe6bf1d2c0f0fd4fcbd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/026ceb5f628d4fecbcf3d3e0ace90f69.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/0483653c9a8d44e2a6cdb802544a663b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/07347924a787455aaf5ea7245e2dcb96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/0b68e49eb4e145a59bda14e32e5c529c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/1152a9c634644ca1801dfdb3b35cd83b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/14d976e772ae42f8b2c289866bd2ae66.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/190dc890302a4cbc9e8e2ef389146d6b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/1929f68e925c4b178b3b9150735289a4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/1d59115228ac4f6c9bb5f003c385211f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/1e2adcc280c34cf1af8323588ec7d110.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/1e748120a3854b408d4cd92b54611287.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/22ee97d2ed27482d82e31d3a21246104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/242abb7780d44e21a804384843e45bc5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/2ff19d82acfc47a78dc6e7ee82fb0ccf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/3be9d049827548c6b842d7a5b16a4240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/3cbc31a3390a466fbcbb00c46c9217d2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/3de4f72977624746a1267ce89d489a95.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/419f02372152471db477f819f910c271.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/47b09f5b56a84c168771f213f406416b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/4ef66e461dfe4d6cbe24a11c68f72120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/530f798e29a147ef8c6202c1a6584ce8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/571a679376c44a7998d35e44756a676c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/596276d5f52942e5a9709a24bc3be14a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/5ce5ff2839314677a30c3f9bc7fdf374.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/614e1a0042834dae960a104e6657d884.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/6235b72e8fbe4cc08b0e826aad5e3588.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/630a750a870e4e3aa875e7b0817b08c5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/64b315900dd7498ca997f467aa7246c6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/68a16b44b4b84e1b98d1cbcc1bcf6c08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/6ccb7cc80f1942bfa044b17d3058d20e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/7c7630a4916d47b8b7ae08f1d44724ee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/82a6a4a1960b47dea3c81c9f803d400e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/8472ca77933042c1aeb15aabe52e4854.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/84a31e61656f44bcae4db92ed4d3bc34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/85fe35a8317945169d84d7ad9fb29cfb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/915a84c160db49dbae282802753ab2a1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/928d28f37fde457eac1423a93550789e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/955865d25131455cb92a7128876038a7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/96354188b8e04ea8ac610947f82bb166.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/99c5296b15a94ae8b0b32b40cb0dba07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/9c9aadd5e50f4f8f83b82d8b9b127544.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/a20af32d71ca413c88013679cefdd5f7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/a3bd821e7a954910883fcabbaf578454.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/b02dc2474529476dae3df22ca333af88.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/b0e55be14c674fbfb4f1902b1163e479.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/b310913dc39342ef9f30f2bdc595c035.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/bf8a00a3bab84bbfbecf64a473ef821b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/c25eec8582ba4053b5477a68d4a51c99.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/c364ed29def84dc7a05dd56dea12b5ba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/c77daa7a61824d028045b51f0ce04af0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/ca8b036b6bc941b481b0d03dd2f19296.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/cac57db2a08c4fed96bab00c3811e080.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/d2b12317a2484a00abe74e5d53c95190.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/d4eb81dc8ac343c78531195642b95dc3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/d8bf794287bf443e99fecd4122eabfa7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/e27fba962bb545d5aae27a9f9f76296d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/e3ab3d2cc4e24adbb571636142145653.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/f24d270606f94d0b91aa2b6366a69ba7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/f5c26e47cef9475cada91f15bc029d4b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/upload/20181201/fe205e6d10284ce7a50f0f5dfb5a2a1a.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/common/layout_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/common/layout_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/common/pagenation.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/common/pagenation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/validators/api_forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/common/tab_food.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/common/tab_food.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/food/cat.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/food/cat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/food/cat_set.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/food/cat_set.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/food/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/food/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/food/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/food/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/food/set.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/food/set.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/member/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/member/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/validators/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/validators/cms_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/cms_forms/user_forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/validators/cms_forms/account_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/cms_forms/account_forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view_model/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view_model/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view_model/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view_model/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food_shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/food_shop.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,53 +136,66 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/food_shop$food_shop.coverage" NAME="food_shop Coverage Results" MODIFIED="1546093904003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/food_shop$food_shop.coverage" NAME="food_shop Coverage Results" MODIFIED="1547639195856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/food_shop$test_data.coverage" NAME="test_data Coverage Results" MODIFIED="1547636094463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1051792256">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Pipfile" value="4" />
-          <entry key="css" value="1" />
-          <entry key="html" value="52" />
-          <entry key="js" value="34" />
-          <entry key="py" value="416" />
+          <entry key="Pipfile" value="5" />
+          <entry key="css" value="4" />
+          <entry key="html" value="128" />
+          <entry key="jpeg" value="6" />
+          <entry key="jpg" value="6" />
+          <entry key="js" value="127" />
+          <entry key="json" value="6" />
+          <entry key="php" value="3" />
+          <entry key="png" value="19" />
+          <entry key="py" value="1145" />
           <entry key="ts" value="1" />
+          <entry key="wxml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
-          <entry key="HTML" value="52" />
-          <entry key="JavaScript" value="34" />
-          <entry key="Python" value="416" />
-          <entry key="TOML file" value="4" />
+          <entry key="CSS" value="4" />
+          <entry key="HTML" value="128" />
+          <entry key="Image" value="31" />
+          <entry key="JSON" value="6" />
+          <entry key="JavaScript" value="127" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="Python" value="1145" />
+          <entry key="TOML file" value="5" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="18" />
-          <entry key="html" value="1670" />
-          <entry key="js" value="5217" />
-          <entry key="py" value="25650" />
+          <entry key="dummy" value="35" />
+          <entry key="html" value="2487" />
+          <entry key="js" value="11821" />
+          <entry key="json" value="11" />
+          <entry key="py" value="48619" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1670" />
-          <entry key="JavaScript" value="5216" />
-          <entry key="PLAIN_TEXT" value="18" />
-          <entry key="Python" value="25650" />
+          <entry key="HTML" value="2487" />
+          <entry key="JSON" value="11" />
+          <entry key="JavaScript" value="11820" />
+          <entry key="PLAIN_TEXT" value="35" />
+          <entry key="Python" value="48619" />
           <entry key="RegExp" value="1" />
         </counts>
       </usages-collector>
@@ -82,24 +204,44 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.py">
+        <entry file="file://$PROJECT_DIR$/app/api/v1/address.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="274">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
-                <marker date="1545970286191" expanded="true" signature="383:388" ph="..." />
-                <marker date="1545970286191" expanded="true" signature="1314:1319" ph="..." />
+                <element signature="e#0#28#0" expanded="true" />
+                <marker date="1547642192009" expanded="true" signature="421:426" ph="..." />
+                <marker date="1547642192009" expanded="true" signature="793:835" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/js/account/index.js">
+        <entry file="file://$PROJECT_DIR$/app/mina/pages/my/addressSet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="31" column="46" lean-forward="true" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+            <state relative-caret-position="-900" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/mina/pages/my/addressSet.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/validators/api_forms/address_forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+                <marker date="1547641798923" expanded="true" signature="394:399" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,94 +249,73 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/validators/cms_forms/account_forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="55" column="50" lean-forward="true" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
+            <state relative-caret-position="149">
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="83" />
               <folding>
                 <element signature="e#0#77#0" expanded="true" />
-                <marker date="1546093727988" expanded="true" signature="268:273" ph="..." />
-                <marker date="1546093727988" expanded="true" signature="1801:1802" ph="..." />
-                <marker date="1546093727988" expanded="true" signature="2267:2272" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/cms/account.py">
+        <entry file="file://$PROJECT_DIR$/app/libs/scope.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1106">
-              <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="256">
+              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view_model/api_vm/food_vm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="22" />
               <folding>
-                <element signature="e#0#55#0" expanded="true" />
-                <marker date="1546094323087" expanded="true" signature="523:1207" ph="..." />
-                <marker date="1546094323087" expanded="true" signature="1490:1492" ph="..." />
+                <element signature="e#0#40#0" expanded="true" />
+                <marker date="1547563029358" expanded="true" signature="124:125" ph="..." />
+                <marker date="1547563029358" expanded="true" signature="124:285" ph="..." />
+                <marker date="1547563029358" expanded="true" signature="794:795" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/templates/common/layout_main.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view_model/api_vm/comment_vm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="46" column="74" lean-forward="true" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="74" />
+            <state relative-caret-position="60">
+              <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+              <folding>
+                <marker date="1547639761388" expanded="true" signature="139:140" ph="..." />
+                <marker date="1547639761388" expanded="true" signature="455:456" ph="..." />
+                <marker date="1547639761388" expanded="true" signature="455:461" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/cms/chart.py">
+        <entry file="file://$PROJECT_DIR$/app/view_model/api_vm/address_vm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+              <folding>
+                <marker date="1547640994460" expanded="true" signature="86:87" ph="..." />
+                <marker date="1547640994460" expanded="true" signature="417:418" ph="..." />
+                <marker date="1547640994460" expanded="true" signature="417:423" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/member_address.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
-                <marker date="1545713545014" expanded="true" signature="107:112" ph="..." />
-                <marker date="1545713545014" expanded="true" signature="201:206" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/libs/error_codes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding>
-                <marker date="1545808702082" expanded="true" signature="41:42" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/wtforms/validators.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="470" column="8" selection-start-line="470" selection-start-column="8" selection-end-line="470" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/cms/index.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-                <marker date="1545715415826" expanded="true" signature="385:386" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/js/account/set.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-371">
-              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-              <folding>
-                <element signature="e#2199#4378#0" />
+                <element signature="e#0#58#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -205,8 +326,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -216,6 +338,10 @@
       <find>filter</find>
       <find>filter_by</find>
       <find>form</find>
+      <find>list</find>
+      <find>}</find>
+      <find>wrap_food_set</find>
+      <find>del</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -224,57 +350,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/models/member_client.py" />
-        <option value="$PROJECT_DIR$/app/models/order.py" />
+        <option value="$PROJECT_DIR$/app/models/member_cart.py" />
         <option value="$PROJECT_DIR$/app/models/order_food.py" />
         <option value="$PROJECT_DIR$/app/models/stat_daily_food.py" />
         <option value="$PROJECT_DIR$/app/models/stat_daily_member.py" />
         <option value="$PROJECT_DIR$/app/models/stat_daily_site.py" />
-        <option value="$PROJECT_DIR$/app/models/wx_share_history.py" />
-        <option value="$PROJECT_DIR$/app/templates/common/layout_user.html" />
-        <option value="$PROJECT_DIR$/app/templates/index/index.html" />
-        <option value="$PROJECT_DIR$/app/cms/chart.py" />
-        <option value="$PROJECT_DIR$/app/libs/utils.py" />
-        <option value="$PROJECT_DIR$/app/view_model/index.py" />
-        <option value="$PROJECT_DIR$/app/cms/index.py" />
-        <option value="$PROJECT_DIR$/app/templates/user/login.html" />
-        <option value="$PROJECT_DIR$/app/static/js/common.js" />
-        <option value="$PROJECT_DIR$/app/templates/common/tab_stat.html" />
-        <option value="$PROJECT_DIR$/app/templates/common/tab_member.html" />
-        <option value="$PROJECT_DIR$/app/templates/common/tab_food.html" />
-        <option value="$PROJECT_DIR$/app/templates/common/tab_finance.html" />
-        <option value="$PROJECT_DIR$/app/templates/common/tab_account.html" />
-        <option value="$PROJECT_DIR$/app/templates/common/tab_user.html" />
-        <option value="$PROJECT_DIR$/app/libs/error_codes.py" />
-        <option value="$PROJECT_DIR$/app/templates/user/reset_pwd.html" />
-        <option value="$PROJECT_DIR$/app/libs/error.py" />
-        <option value="$PROJECT_DIR$/app/view_model/base.py" />
-        <option value="$PROJECT_DIR$/app/templates/user/edit.html" />
-        <option value="$PROJECT_DIR$/app/static/js/user/edit.js" />
-        <option value="$PROJECT_DIR$/app/static/js/user/login.js" />
-        <option value="$PROJECT_DIR$/app/validators/cms_forms.py" />
-        <option value="$PROJECT_DIR$/app/static/js/user/reset_pwd.js" />
-        <option value="$PROJECT_DIR$/app/cms/__init__.py" />
-        <option value="$PROJECT_DIR$/app/cms/user.py" />
         <option value="$PROJECT_DIR$/app/models/user.py" />
-        <option value="$PROJECT_DIR$/app/models/base.py" />
-        <option value="$PROJECT_DIR$/app/libs/scope.py" />
+        <option value="$PROJECT_DIR$/app/models/wx_share_history.py" />
         <option value="$PROJECT_DIR$/app/api/v1/user.py" />
-        <option value="$PROJECT_DIR$/app/config/setting.py" />
-        <option value="$PROJECT_DIR$/app/templates/common/pagenation.html" />
-        <option value="$PROJECT_DIR$/app/templates/common/layout_main.html" />
-        <option value="$PROJECT_DIR$/app/templates/404.html" />
-        <option value="$PROJECT_DIR$/app/templates/500.html" />
-        <option value="$PROJECT_DIR$/food_shop.py" />
-        <option value="$PROJECT_DIR$/app/templates/account/info.html" />
-        <option value="$PROJECT_DIR$/app/templates/account/index.html" />
-        <option value="$PROJECT_DIR$/app/validators/cms_forms/user_forms.py" />
-        <option value="$PROJECT_DIR$/app/templates/account/set.html" />
         <option value="$PROJECT_DIR$/app/validators/base.py" />
-        <option value="$PROJECT_DIR$/app/static/js/account/set.js" />
-        <option value="$PROJECT_DIR$/app/static/js/account/index.js" />
-        <option value="$PROJECT_DIR$/app/validators/cms_forms/account_forms.py" />
-        <option value="$PROJECT_DIR$/app/cms/account.py" />
+        <option value="$PROJECT_DIR$/app/validators/cms_forms/food_forms.py" />
+        <option value="$PROJECT_DIR$/food_shop.py" />
+        <option value="$PROJECT_DIR$/app/models/__init__.py" />
+        <option value="$PROJECT_DIR$/app/models/food.py" />
+        <option value="$PROJECT_DIR$/app/models/food_cat.py" />
+        <option value="$PROJECT_DIR$/app/models/order.py" />
+        <option value="$PROJECT_DIR$/app/libs/error.py" />
+        <option value="$PROJECT_DIR$/app/models/member.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app/models/member_client.py" />
+        <option value="$PROJECT_DIR$/app/mina/pages/index/index.js" />
+        <option value="$PROJECT_DIR$/app/api/v1/__init__.py" />
+        <option value="$PROJECT_DIR$/app/view_model/index.py" />
+        <option value="$PROJECT_DIR$/app/mina/utils/base64.js" />
+        <option value="$PROJECT_DIR$/app/mina/app.js" />
+        <option value="$PROJECT_DIR$/app/libs/utils.py" />
+        <option value="$PROJECT_DIR$/app/validators/api_forms/Food_forms.py" />
+        <option value="$PROJECT_DIR$/app/config/setting.py" />
+        <option value="$PROJECT_DIR$/app/view_model/api_vm/FoodViewModel.py" />
+        <option value="$PROJECT_DIR$/app/api/v1/token.py" />
+        <option value="$PROJECT_DIR$/app/api/v1/member.py" />
+        <option value="$PROJECT_DIR$/app/libs/token.py" />
+        <option value="$PROJECT_DIR$/app/mina/pages/index/index_model.js" />
+        <option value="$PROJECT_DIR$/app/validators/api_forms/IDMustBePositive.py" />
+        <option value="$PROJECT_DIR$/app/view_model/api_vm/food_vm.py" />
+        <option value="$PROJECT_DIR$/app/mina/pages/food/index.js" />
+        <option value="$PROJECT_DIR$/app/mina/pages/food/info.js" />
+        <option value="$PROJECT_DIR$/app/models/member_comment.py" />
+        <option value="$PROJECT_DIR$/app/mina/utils/config.js" />
+        <option value="$PROJECT_DIR$/app/mina/utils/base.js" />
+        <option value="$PROJECT_DIR$/app/mina/utils/token.js" />
+        <option value="$PROJECT_DIR$/app/validators/api_forms/member_forms.py" />
+        <option value="$PROJECT_DIR$/app/view_model/base.py" />
+        <option value="$PROJECT_DIR$/app/models/base.py" />
+        <option value="$PROJECT_DIR$/app/config/secure.py" />
+        <option value="$PROJECT_DIR$/test_data.py" />
+        <option value="$PROJECT_DIR$/app/view_model/api_vm/comment_vm.py" />
+        <option value="$PROJECT_DIR$/app/api/v1/food.py" />
+        <option value="$PROJECT_DIR$/app/libs/scope.py" />
+        <option value="$PROJECT_DIR$/app/view_model/api_vm/address_vm.py" />
+        <option value="$PROJECT_DIR$/app/validators/api_forms/address_forms.py" />
+        <option value="$PROJECT_DIR$/app/api/v1/address.py" />
       </list>
     </option>
   </component>
@@ -301,7 +427,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,7 +443,14 @@
               <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="food_shop" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="food_shop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
@@ -336,42 +468,35 @@
               <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="food_shop" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="mina" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="food_shop" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="mina" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="food_shop" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
+              <item name="mina" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="my" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="food_shop" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="mina" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="food_shop" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="food_shop" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
@@ -384,7 +509,7 @@
               <item name="food_shop" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="validators" type="462c0819:PsiDirectoryNode" />
-              <item name="cms_forms" type="462c0819:PsiDirectoryNode" />
+              <item name="api_forms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
@@ -392,18 +517,32 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="validators" type="462c0819:PsiDirectoryNode" />
               <item name="cms_forms" type="462c0819:PsiDirectoryNode" />
-              <item name="account_forms.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="food_shop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="view_model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="food_shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="food_shop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="view_model" type="462c0819:PsiDirectoryNode" />
+              <item name="api_vm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="form&#9;FILE&#9;file:///Users/zhaochenxi/Home/pythonDeveloper/flask-api/food_shop/app/validators/cms_forms/account_forms.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jsx.switch.disabled" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -429,7 +568,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.food_shop">
     <configuration name="food_shop" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="food_shop" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -452,9 +591,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="food_shop" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.food_shop" />
+      <item itemvalue="Python.test_data" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.food_shop" />
+        <item itemvalue="Python.test_data" />
       </list>
     </recent_temporary>
   </component>
@@ -488,21 +654,21 @@
     <frame x="0" y="23" width="1280" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4949495" visible="true" weight="0.26655897" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4949495" visible="true" weight="0.2786753" />
       <window_info id="Structure" order="1" sideWeight="0.5050505" side_tool="true" weight="0.2625202" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3287879" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3287879" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4983845" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3287879" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3287879" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016155" side_tool="true" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" weight="0.3287879" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3287879" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -522,22 +688,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/models/user.py</url>
-          <line>62</line>
+          <line>63</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/food_shop.py</url>
-          <line>11</line>
+          <line>13</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/models/user.py</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/cms/user.py</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -547,7 +713,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/validators/base.py</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -570,6 +736,121 @@
           <line>64</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/cms/food.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/cms/food.py</url>
+          <line>94</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/cms/food.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/cms/food.py</url>
+          <line>132</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/validators/cms_forms/food_forms.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/cms/food.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/libs/upload.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/cms/food.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/cms/food.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/cms/member.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/cms/member.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/api/v1/member.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/api/v1/member.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/api/v1/food.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/libs/token.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/libs/utils.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/api/v1/food.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/api/v1/food.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/view_model/api_vm/food_vm.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/api/v1/food.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/api/v1/food.py</url>
+          <line>104</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_data.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/static/js/food/set.js</url>
+          <line>51</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -581,418 +862,455 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/food.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/app_error_log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/stat_daily_food.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/stat_daily_site.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="651" column="21" selection-start-line="651" selection-start-column="13" selection-end-line="651" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/user/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
-          <caret line="10" column="102" selection-start-line="10" selection-start-column="102" selection-end-line="10" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1542">
-          <caret line="406" column="24" selection-start-line="406" selection-start-column="24" selection-end-line="406" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/sqlalchemy/orm/query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="1634" column="49" selection-start-line="1634" selection-start-column="42" selection-end-line="1634" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/libs/scope.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="68" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/werkzeug/wrappers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="920" selection-start-line="920" selection-end-line="920" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/werkzeug/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="922" selection-start-line="922" selection-end-line="922" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask/_compat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pipfile">
+    <entry file="file://$PROJECT_DIR$/app/view_model/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/user/login.html">
+    <entry file="file://$PROJECT_DIR$/app/libs/upload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="40" />
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/v1/token.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="315">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/python_stubs/-850505493/builtins.py">
+    <entry file="file://$PROJECT_DIR$/app/api/v1/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2726">
-          <caret line="5237" column="8" selection-start-line="5237" selection-start-column="8" selection-end-line="5237" selection-end-column="8" />
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask_login/login_manager.py">
+    <entry file="file://$PROJECT_DIR$/app/view_model/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="358" selection-start-line="358" selection-end-line="358" />
+        <state relative-caret-position="-20">
+          <caret column="32" selection-start-column="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask/templating.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="134" selection-start-line="134" selection-end-line="134" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api/v1/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <marker date="1545991536425" expanded="true" signature="167:170" ph="..." />
-            <marker date="1545991536425" expanded="true" signature="236:241" ph="..." />
-            <marker date="1545991536425" expanded="true" signature="236:248" ph="..." />
-            <marker date="1545991536425" expanded="true" signature="323:324" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="206" column="20" selection-start-line="206" selection-start-column="12" selection-end-line="206" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/common/tab_account.html">
+    <entry file="file://$PROJECT_DIR$/app/validators/api_forms/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/common/pagenation.html">
+    <entry file="file://$PROJECT_DIR$/app/validators/api_forms/IDMustBePositive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        <state relative-caret-position="90">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/500.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="1790" selection-start-line="1790" selection-end-line="1790" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/app_access_log.py">
+    <entry file="file://$PROJECT_DIR$/app/models/member_cart.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/account/info.html">
+    <entry file="file://$PROJECT_DIR$/app/mina/pages/index/index_model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="8" column="117" selection-start-line="8" selection-start-column="117" selection-end-line="8" selection-end-column="117" />
+        <state relative-caret-position="697">
+          <caret line="68" column="37" lean-forward="true" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/cms/user.py">
+    <entry file="file://$PROJECT_DIR$/app/mina/pages/food/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-            <marker date="1545968293000" expanded="true" signature="1839:1844" ph="..." />
-          </folding>
+        <state relative-caret-position="1485">
+          <caret line="174" column="32" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/base.py">
+    <entry file="file://$PROJECT_DIR$/app/mina/pages/food/info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <marker date="1545882715764" expanded="true" signature="303:308" ph="..." />
-            <marker date="1545882715764" expanded="true" signature="617:1236" ph="..." />
-            <marker date="1545882715764" expanded="true" signature="1259:1264" ph="..." />
-          </folding>
+        <state relative-caret-position="-1634">
+          <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/user/reset_pwd.js">
+    <entry file="file://$PROJECT_DIR$/app/mina/pages/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/validators/cms_forms/user_forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="90" selection-start-line="9" selection-start-column="90" selection-end-line="9" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <marker date="1546079636083" expanded="true" signature="724:729" ph="..." />
-            <marker date="1546079636083" expanded="true" signature="1010:1015" ph="..." />
-          </folding>
+        <state relative-caret-position="810">
+          <caret line="55" column="11" lean-forward="true" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/account/set.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="44" column="66" lean-forward="true" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask_login/utils.py">
+    <entry file="file://$PROJECT_DIR$/app/mina/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
-          <caret line="260" selection-start-line="260" selection-end-line="260" />
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask/wrappers.py">
+    <entry file="file://$PROJECT_DIR$/app/mina/utils/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="136" column="4" selection-start-line="136" selection-start-column="4" selection-end-line="136" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/food_shop.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="105">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/wtforms/form.py">
+    <entry file="file://$PROJECT_DIR$/app/mina/utils/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="192" selection-start-line="192" selection-end-line="192" />
+        <state relative-caret-position="120">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mina/utils/util.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/member.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56">
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mina/utils/token.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/validators/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="105">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <marker date="1546087356662" expanded="true" signature="127:132" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/account/index.html">
+    <entry file="file://$PROJECT_DIR$/app/validators/api_forms/Food_forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="65" column="82" selection-start-line="65" selection-start-column="82" selection-end-line="65" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/user/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="66" column="39" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/user/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="40" column="21" lean-forward="true" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/account/set.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-371">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+        <state relative-caret-position="285">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
           <folding>
-            <element signature="e#2199#4378#0" />
+            <element signature="e#0#48#0" expanded="true" />
+            <marker date="1547544754629" expanded="true" signature="168:173" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/wtforms/validators.py">
+    <entry file="file://$PROJECT_DIR$/app/validators/api_forms/member_forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="470" column="8" selection-start-line="470" selection-start-column="8" selection-end-line="470" selection-end-column="8" />
+        <state relative-caret-position="206">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <marker date="1547616365878" expanded="true" signature="264:265" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="29" column="8" selection-start-line="29" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/secure.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="1790" selection-start-line="1790" selection-end-line="1790" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/member_comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/food.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/food_cat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/sqlalchemy/orm/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15974">
+          <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="406" column="23" lean-forward="true" selection-start-line="406" selection-start-column="23" selection-end-line="406" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <marker date="1547617447117" expanded="true" signature="347:352" ph="..." />
+            <marker date="1547617447117" expanded="true" signature="661:1626" ph="..." />
+            <marker date="1547617447117" expanded="true" signature="1016:1148" ph="..." />
+            <marker date="1547617447117" expanded="true" signature="1448:1454" ph="..." />
+            <marker date="1547617447117" expanded="true" signature="1649:1654" ph="..." />
+            <marker date="1547617447117" expanded="true" signature="2134:2209" ph="..." />
+            <marker date="1547617447117" expanded="true" signature="2448:2474" ph="..." />
+            <marker date="1547617447117" expanded="true" signature="2737:2743" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <marker date="1547638657115" expanded="true" signature="1519:1520" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food_shop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/v1/member.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <marker date="1547555676897" expanded="true" signature="447:452" ph="..." />
+            <marker date="1547555676897" expanded="true" signature="1452:1453" ph="..." />
+            <marker date="1547555676897" expanded="true" signature="1452:1457" ph="..." />
+            <marker date="1547555676897" expanded="true" signature="1992:2176" ph="..." />
+            <marker date="1547555676897" expanded="true" signature="2248:2249" ph="..." />
+            <marker date="1547555676897" expanded="true" signature="2248:2253" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/libs/token.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/food_shop-fpTAVvtH/lib/python3.6/site-packages/flask_httpauth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="58" column="35" lean-forward="true" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view_model/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+          <folding>
+            <marker date="1547617447131" expanded="true" signature="22:26" ph="..." />
+            <marker date="1547617447131" expanded="true" signature="168:257" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/libs/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/v1/food.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146">
+          <caret line="84" column="59" lean-forward="true" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+            <marker date="1547640024737" expanded="true" signature="612:617" ph="..." />
+            <marker date="1547640024737" expanded="true" signature="1321:1326" ph="..." />
+            <marker date="1547640024737" expanded="true" signature="2207:2369" ph="..." />
+            <marker date="1547640024737" expanded="true" signature="2680:2681" ph="..." />
+            <marker date="1547640024737" expanded="true" signature="2680:2685" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/libs/scope.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view_model/api_vm/comment_vm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+          <folding>
+            <marker date="1547639761388" expanded="true" signature="139:140" ph="..." />
+            <marker date="1547639761388" expanded="true" signature="455:456" ph="..." />
+            <marker date="1547639761388" expanded="true" signature="455:461" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view_model/api_vm/food_vm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <marker date="1547563029358" expanded="true" signature="124:125" ph="..." />
+            <marker date="1547563029358" expanded="true" signature="124:285" ph="..." />
+            <marker date="1547563029358" expanded="true" signature="794:795" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view_model/api_vm/address_vm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding>
+            <marker date="1547640994460" expanded="true" signature="86:87" ph="..." />
+            <marker date="1547640994460" expanded="true" signature="417:418" ph="..." />
+            <marker date="1547640994460" expanded="true" signature="417:423" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/member_address.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/validators/cms_forms/account_forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="55" column="50" lean-forward="true" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
+        <state relative-caret-position="149">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="83" />
           <folding>
             <element signature="e#0#77#0" expanded="true" />
-            <marker date="1546093727988" expanded="true" signature="268:273" ph="..." />
-            <marker date="1546093727988" expanded="true" signature="1801:1802" ph="..." />
-            <marker date="1546093727988" expanded="true" signature="2267:2272" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/libs/error_codes.py">
+    <entry file="file://$PROJECT_DIR$/app/validators/api_forms/address_forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <marker date="1545808702082" expanded="true" signature="41:42" ph="..." />
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1547641798923" expanded="true" signature="394:399" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/account/index.js">
+    <entry file="file://$PROJECT_DIR$/app/api/v1/address.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="31" column="46" lean-forward="true" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="274">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <marker date="1545970286191" expanded="true" signature="383:388" ph="..." />
-            <marker date="1545970286191" expanded="true" signature="1314:1319" ph="..." />
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1547642192009" expanded="true" signature="421:426" ph="..." />
+            <marker date="1547642192009" expanded="true" signature="793:835" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/cms/chart.py">
+    <entry file="file://$PROJECT_DIR$/app/mina/pages/my/addressSet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1545713545014" expanded="true" signature="107:112" ph="..." />
-            <marker date="1545713545014" expanded="true" signature="201:206" ph="..." />
-          </folding>
-        </state>
+        <state relative-caret-position="-900" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/cms/index.py">
+    <entry file="file://$PROJECT_DIR$/app/mina/pages/my/addressSet.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <marker date="1545715415826" expanded="true" signature="385:386" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/cms/account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1106">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-            <marker date="1546094323087" expanded="true" signature="523:1207" ph="..." />
-            <marker date="1546094323087" expanded="true" signature="1490:1492" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/common/layout_main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="46" column="74" lean-forward="true" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="74" />
+        <state relative-caret-position="233">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
         </state>
       </provider>
     </entry>

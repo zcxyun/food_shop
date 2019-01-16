@@ -1,0 +1,55 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.0",
+	"appid": "wxfdcf36f2bf5d2af2",
+	"projectname": "food_shop",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": -1,
+					"name": "food_index",
+					"pathName": "pages/food/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cart_index",
+					"pathName": "pages/cart/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my_index",
+					"pathName": "pages/my/index"
+				}
+			]
+		}
+	}
+}

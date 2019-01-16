@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from app.models.base import Base
+from . import Base
 
 
 class Image(Base):
