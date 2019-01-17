@@ -6,7 +6,7 @@ from app.libs.token import auth
 from app.libs.utils import buildImageUrl
 from app.models import FoodCat, Food, MemberCart, MemberComment, Member
 from app.validators.api_forms.Food_forms import FoodSearchForm
-from app.validators.api_forms.IDMustBePositive import IDMustBePositive
+from app.validators.api_forms.common_forms import IDMustBePositive
 from app.view_model.api_vm.comment_vm import CommentCollection
 from app.view_model.api_vm.food_vm import FoodCollection, FoodViewModel
 
@@ -38,7 +38,7 @@ def index():
     return jsonify(resp)
 
 
-@api.route('/search')
+@api.route('/search', methods=['POST'])
 @auth.login_required
 def search():
     form = FoodSearchForm().validate()
@@ -72,7 +72,7 @@ def search():
     return jsonify(data)
 
 
-@api.route('/info')
+@api.route('/info', methods=['POST'])
 @auth.login_required
 def info():
     id = IDMustBePositive().validate().id.data
@@ -90,7 +90,7 @@ def info():
     return jsonify(resp)
 
 
-@api.route('/comments')
+@api.route('/comments', methods=['POST'])
 def comments():
     id = IDMustBePositive().validate().id.data
     rule = MemberComment.food_ids.ilike('%_{}_%'.format(id))

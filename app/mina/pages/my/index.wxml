@@ -8,7 +8,8 @@
     <navigator url="/pages/my/order_list" hover-class="navigator-hover">我的订单</navigator>
   </view>
   <view class="my-item">
-    <navigator url="/pages/my/addressList" hover-class="navigator-hover">我的收货地址</navigator>
+    <!-- <navigator url="/pages/my/addressList" hover-class="navigator-hover">我的收货地址</navigator> -->
+    <view hover-class='navigator-hover' bindtap='myAddress'>我的收货地址</view>
   </view>
 
   <view class="my-item">

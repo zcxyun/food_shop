@@ -2,6 +2,7 @@ from app.view_model.base import BaseViewModel
 
 
 class AddressViewModel(BaseViewModel):
+    show_keys = ['id', 'nickname', 'mobile', 'is_default', 'address']
 
     def __init__(self, address):
         self.id = address.id

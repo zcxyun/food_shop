@@ -47,3 +47,9 @@ class Forbidden(APIException):
     code = 403
     error_code = 1004
     msg = '禁止访问，权限不够'
+
+
+class UnderStock(APIException):
+    code = 400
+    error_code = 1010
+    msg = '对不起，库存不足'

@@ -25,7 +25,7 @@ Page({
     onLoad: function (e) {
         var that = this;
         that.setData({
-            id: e.id
+            id: parseInt(e.id)
         });
     },
     onShow: function () {
@@ -169,6 +169,7 @@ Page({
         // });
         http.request({
             url: '/food/info',
+            method: 'POST',
             data: {
                 id: that.data.id
             },
@@ -213,6 +214,7 @@ Page({
         // });
         http.request({
             url: '/food/comments',
+            method: 'POST',
             data: {
                 id: that.data.id
             },

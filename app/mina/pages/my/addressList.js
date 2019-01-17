@@ -31,8 +31,13 @@ Page({
         wx.navigateBack({});
     },
     addressSet: function (e) {
-        wx.navigateTo({
-            url: "/pages/my/addressSet?id=" + e.currentTarget.dataset.id
+        // wx.navigateTo({
+        //     url: "/pages/my/addressSet?id=" + e.currentTarget.dataset.id
+        // })
+        wx.chooseAddress({
+            success: res => {
+
+            }
         })
     },
     getList:function(){

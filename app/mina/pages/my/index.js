@@ -1,4 +1,5 @@
-//获取应用实例
+import Address from '../../utils/address.js';
+const address = new Address();
 var app = getApp();
 Page({
     data: {},
@@ -21,6 +22,17 @@ Page({
                 }
                 that.setData({
                    user_info:resp.data.info
+                });
+            }
+        });
+    },
+    myAddress: function() {
+        wx.chooseAddress({
+            success: res => {
+                address.submitAddress(res, (success, data) => {
+                    if (success) {
+                        app.alert({'content': '地址添加或修改成功'})
+                    }
                 });
             }
         });

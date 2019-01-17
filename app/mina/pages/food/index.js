@@ -165,6 +165,7 @@ Page({
         // });
         http.request({
             url: '/food/search',
+            method: 'POST',
             data: {
                 cat_id: that.data.activeCategoryId,
                 query_key: that.data.searchInput,

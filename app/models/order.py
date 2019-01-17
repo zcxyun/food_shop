@@ -25,3 +25,5 @@ class Order(Base):
     foods = relationship('Food', secondary=OrderFood.__table__,
                          backref=backref('orders', lazy='dynamic'), lazy='dynamic')
     order_foods = relationship('OrderFood', backref='order', lazy='dynamic')
+
+    comments = relationship('MemberComment', backref='order', lazy='dynamic')

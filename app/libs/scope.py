@@ -26,7 +26,7 @@ class UserScope(Scope):
 
 
 class AdminScope(Scope):
-    allow_module = ['api.v1.member', 'api.v1.food', 'api.v1.address',
+    allow_module = ['api.v1.member', 'api.v1.food', 'api.v1.address', 'api.v1.cart', 'api.v1.order',
                     'cms.user', 'cms.index', 'cms.account', 'cms.food', 'cms.member',
                     'cms.upload']
 

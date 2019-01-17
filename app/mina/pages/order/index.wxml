@@ -1,12 +1,16 @@
 <view class="container">
      <view class="address-box">
-        <view class="add-address" hidden="{{default_address}}">
+        <!-- <view class="add-address" hidden="{{default_address}}">
             <view class="title" bindtap="addressSet">新增收货地址</view>
         </view>
         <view class="show-address" hidden="{{!default_address}}" bindtap="selectAddress">
             <view class="name-tel">{{default_address.name}}  {{default_address.mobile}}</view>
             <view class="addr-text">{{default_address.address}}</view>
+        </view> -->
+        <view class='add-address'>
+            <view class='title' bindtap='selectAddress'>编辑收货地址</view>
         </view>
+        
      </view>
      <view class="goods-list">
         <view class="list-title">商品列表</view>

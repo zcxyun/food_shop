@@ -77,7 +77,7 @@ def share():
 @api.route('/info')
 @auth.login_required
 def info():
-    member = g.member
+    member = Member.query.get_or_404_deleted(g.member.id)
     info = {
         'nickname': member.nickname,
         'avatar_url': member.avatar

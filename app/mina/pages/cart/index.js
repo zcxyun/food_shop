@@ -1,11 +1,13 @@
-//index.js
+import Base from '../../utils/base.js';
+
+const http = new Base();
 var app = getApp();
 Page({
     data: {},
     onLoad: function () {
 
     },
-    onShow:function(){
+    onShow: function () {
         this.getCartList();
     },
     //每项前面的选中框
@@ -13,7 +15,7 @@ Page({
         var index = e.currentTarget.dataset.index;
         var list = this.data.list;
         if (index !== "" && index != null) {
-            list[ parseInt(index) ].active = !list[ parseInt(index) ].active;
+            list[parseInt(index)].active = !list[parseInt(index)].active;
             this.setPageData(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
         }
     },
@@ -66,7 +68,7 @@ Page({
         if (list[i].number < list[i].stock) {
             list[i].number++;
             that.setPageData(that.getSaveHide(), that.totalPrice(), that.allSelect(), that.noSelect(), list);
-            this.setCart( list[parseInt(index)].food_id,list[parseInt(index)].number );
+            this.setCart(list[parseInt(index)].food_id, list[parseInt(index)].number);
         }
     },
     //减数量
@@ -77,7 +79,7 @@ Page({
             list[parseInt(index)].number--;
             this.setPageData(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
 
-            this.setCart( list[parseInt(index)].food_id,list[parseInt(index)].number );
+            this.setCart(list[parseInt(index)].food_id, list[parseInt(index)].number);
         }
     },
     //编辑默认全不选
@@ -105,10 +107,10 @@ Page({
         var list = this.data.list;
         var totalPrice = 0.00;
         for (var i = 0; i < list.length; i++) {
-            if ( !list[i].active) {
+            if (!list[i].active) {
                 continue;
             }
-            totalPrice = totalPrice + parseFloat( list[i].price ) * list[i].number;
+            totalPrice = totalPrice + parseFloat(list[i].price) * list[i].number;
         }
         return totalPrice;
     },
@@ -124,13 +126,13 @@ Page({
     //去结算
     toPayOrder: function () {
         var data = {
-            type:"cart",
+            type: "cart",
             goods: []
         };
 
         var list = this.data.list;
         for (var i = 0; i < list.length; i++) {
-            if ( !list[i].active) {
+            if (!list[i].active) {
                 continue;
             }
             data['goods'].push({
@@ -154,11 +156,11 @@ Page({
     deleteSelected: function () {
         var list = this.data.list;
         var goods = [];
-        list = list.filter(function ( item ) {
-            if( item.active ){
-                goods.push( {
-                    "id":item.food_id
-                } )
+        list = list.filter(function (item) {
+            if (item.active) {
+                goods.push({
+                    "id": item.food_id
+                })
             }
 
             return !item.active;
@@ -169,59 +171,96 @@ Page({
         this.setData({
             list: list
         })
-        this.setPageData( this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
+        this.setPageData(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
         //发送请求到后台删除数据
-        wx.request({
-            url: app.buildUrl("/cart/del"),
-            header: app.getRequestHeader(),
+        // wx.request({
+        //     url: app.buildUrl("/cart/del"),
+        //     header: app.getRequestHeader(),
+        //     method: 'POST',
+        //     data: {
+        //         goods: JSON.stringify( goods )
+        //     },
+        //     success: function (res) {
+        //     }
+        // });
+        http.request({
+            url: '/cart/delete',
             method: 'POST',
             data: {
-                goods: JSON.stringify( goods )
-            },
-            success: function (res) {
+                goods: JSON.stringify(goods)
             }
         });
     },
     getCartList: function () {
         var that = this;
-        wx.request({
-            url: app.buildUrl("/cart/index"),
-            header: app.getRequestHeader(),
-            success: function (res) {
+        // wx.request({
+        //     url: app.buildUrl("/cart/index"),
+        //     header: app.getRequestHeader(),
+        //     success: function (res) {
+        //         var resp = res.data;
+        //         if (resp.code != 200) {
+        //             app.alert({"content": resp.msg});
+        //             return;
+        //         }
+        //         that.setData({
+        //             list: resp.data.list,
+        //             saveHidden: true,
+        //             totalPrice: 0.00,
+        //             allSelect: true,
+        //             noSelect: false
+        //         });
+        //
+        //         that.setPageData(that.getSaveHide(), that.totalPrice(), that.allSelect(), that.noSelect(), that.data.list);
+        //     }
+        // });
+        http.request({
+            url: '/cart/index',
+            sCallback: res => {
                 var resp = res.data;
-                if (resp.code != 200) {
-                    app.alert({"content": resp.msg});
+                if (res.statusCode != 200) {
+                    app.alert({'content': resp.msg});
                     return;
                 }
-                that.setData({
-                    list:resp.data.list,
+                this.setData({
+                    list: resp.list,
                     saveHidden: true,
                     totalPrice: 0.00,
                     allSelect: true,
                     noSelect: false
                 });
-
                 that.setPageData(that.getSaveHide(), that.totalPrice(), that.allSelect(), that.noSelect(), that.data.list);
             }
         });
     },
-    setCart:function( food_id, number ){
+    setCart: function (food_id, number) {
         var that = this;
         var data = {
             "id": food_id,
             "number": number
         };
-        wx.request({
-            url: app.buildUrl("/cart/set"),
-            header: app.getRequestHeader(),
+        // wx.request({
+        //     url: app.buildUrl("/cart/set"),
+        //     header: app.getRequestHeader(),
+        //     method: 'POST',
+        //     data: data,
+        //     success: function (res) {
+        //         var resp = res.data;
+        //         if (resp.code != 200) {
+        //             app.alert({'content': resp.msg});
+        //             return;
+        //         }
+        //     }
+        // });
+        http.request({
+            url: '/cart/set',
             method: 'POST',
             data: data,
-            success: function (res) {
-                var resp = res.data;
-                if (resp.code != 200) {
-                    app.alert({'content': resp.msg});
-                    return;
-                }
+            sCallback: res => {
+                // var resp = res.data;
+                // if (res.statusCode != 200) {
+                //     app.alert({'content': resp.msg});
+                //     return;
+                // }
             }
         });
     }

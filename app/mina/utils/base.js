@@ -13,8 +13,8 @@ export default class Base {
      */
     request(params, noRefetch) {
         var url = this.baseUrl + params.url;
-        if (!params.type) {
-            params.type = 'GET';
+        if (!params.method) {
+            params.method = 'GET';
         }
         /*不需要再次组装地址*/
         if (params.setUpUrl == false) {
@@ -22,7 +22,7 @@ export default class Base {
         }
         wx.request({
             url: url,
-            method: params.type,
+            method: params.method,
             header: {
                 'content-type': 'application/json',
                 'Authorization': 'Basic ' + base64_encode(
