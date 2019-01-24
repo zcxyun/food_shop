@@ -26,3 +26,4 @@ class GoodsForm(BaseForm):
         except Exception:
             raise ValidationError('商品参数不是有效的json格式')
         self.goods.data = data
+

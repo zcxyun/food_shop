@@ -24,6 +24,7 @@ class FoodViewModel(BaseViewModel):
 
 class FoodCollection:
 
-    def fill(self, foods):
+    @staticmethod
+    def fill(foods):
         return [FoodViewModel(food).show(
             'id', 'name', 'price', 'min_price', 'pic_url') for food in foods]

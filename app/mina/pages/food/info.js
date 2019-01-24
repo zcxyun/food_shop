@@ -73,8 +73,7 @@ Page({
             method: 'POST',
             data: data,
             sCallback: res => {
-                var resp = res.data;
-                app.alert({'content': resp.msg});
+                app.alert({'content': res.msg});
                 that.setData({
                     hideShopPopup: true
                 });
@@ -174,20 +173,18 @@ Page({
                 id: that.data.id
             },
             sCallback: res => {
-                var resp = res.data;
-                if (res.statusCode != 200) {
-                    app.alert({"content": resp.msg});
-                    wx.navigateTo({
-                        url: "/pages/food/index"
-                    });
-                    return;
-                }
                 that.setData({
-                    info: resp.info,
-                    buyNumMax: resp.info.stock,
-                    shopCarNum: resp.cart_number
+                    info: res.info,
+                    buyNumMax: res.info.stock,
+                    shopCarNum: res.cart_number
                 });
-                WxParse.wxParse('article', 'html', resp.info.summary, that, 5);
+                WxParse.wxParse('article', 'html', res.info.summary, that, 5);
+            },
+            eCallback: res => {
+                app.alert({"content": res.msg});
+                wx.navigateTo({
+                    url: "/pages/food/index"
+                });
             }
         });
     },
@@ -219,16 +216,13 @@ Page({
                 id: that.data.id
             },
             sCallback: res => {
-                var resp = res.data;
-                if (res.statusCode != 200) {
-                    app.alert({"content": resp.msg});
-                    return;
-                }
-
                 that.setData({
-                    commentList: resp.list,
-                    commentCount: resp.count,
+                    commentList: res.list,
+                    commentCount: res.count,
                 });
+            },
+            eCallback: res => {
+                app.alert({"content": res.msg});
             }
         });
     },

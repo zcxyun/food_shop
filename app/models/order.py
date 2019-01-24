@@ -1,5 +1,8 @@
-from sqlalchemy import Column, Integer, String, Text, SmallInteger, DECIMAL
+from sqlalchemy import Column, Integer, String, Text, SmallInteger, DECIMAL, ForeignKey
 from sqlalchemy.orm import relationship, backref
+
+from app.libs.enums import OrderStatus
+from app.libs.error_codes import OrderStatusException
 from . import Base
 from . import OrderFood
 
@@ -7,7 +10,7 @@ from . import OrderFood
 class Order(Base):
     id = Column(Integer, primary_key=True)
     order_sn = Column(String(40), nullable=False, comment='随机订单号')
-    member_id = Column(Integer, nullable=False, comment='会员ID')
+    member_id = Column(Integer, ForeignKey('member.id'), nullable=False, comment='会员ID')
     total_price = Column(DECIMAL, nullable=False, comment='订单应付金额')
     total_count = Column(Integer, nullable=False, comment='订单商品总数')
     freight = Column(DECIMAL, default=0.00, comment='运费')
@@ -27,3 +30,39 @@ class Order(Base):
     order_foods = relationship('OrderFood', backref='order', lazy='dynamic')
 
     comments = relationship('MemberComment', backref='order', lazy='dynamic')
+
+    show_keys = ('id', 'order_sn', 'member_id', 'total_price', 'total_count', 'freight', 'pay_price',
+                 'note', 'order_status', 'snap_img', 'snap_name', 'snap_address', 'snap_items')
+
+    @property
+    def order_status_enum(self):
+        try:
+            status = OrderStatus(self.order_status)
+        except Exception:
+            raise OrderStatusException()
+        return status
+
+    @order_status_enum.setter
+    def order_status_enum(self, status):
+        if type(status) == OrderStatus:
+            self.order_status = status.value
+        else:
+            raise OrderStatusException()
+
+    @property
+    def order_status_desc(self):
+        status_map = {
+            OrderStatus.UNPAID: '待支付',
+            OrderStatus.PAID: '已支付，待发货',
+            OrderStatus.DELIVERED: '已发货，待收货',
+            OrderStatus.NOCOMMENT: '已收货，待评价',
+            OrderStatus.DONE: '已评价',
+            OrderStatus.CLOSE: '已关闭'
+        }
+        return status_map[self.order_status_enum] if self.order_status_enum in status_map else '订单状态不正确'
+
+    @property
+    def order_number(self):
+        order_number = self.date_create_time.strftime('%Y%m%d%H%M%S')
+        order_number += str(self.id).zfill(5)
+        return order_number

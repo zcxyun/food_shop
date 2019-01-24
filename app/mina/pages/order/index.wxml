@@ -7,10 +7,14 @@
             <view class="name-tel">{{default_address.name}}  {{default_address.mobile}}</view>
             <view class="addr-text">{{default_address.address}}</view>
         </view> -->
-        <view class='add-address'>
+         <view class='show-address' wx:if='{{address}}'>
+            <view class='name-tel'>{{address.userName}} {{address.telNumber}}</view>
+            <view class='addr-text'>{{addressInfo}}</view>
+        </view>
+        <view class='add-address' wx:else >
             <view class='title' bindtap='selectAddress'>编辑收货地址</view>
         </view>
-        
+
      </view>
      <view class="goods-list">
         <view class="list-title">商品列表</view>

@@ -137,7 +137,7 @@ Page({
             }
             data['goods'].push({
                 "id": list[i].food_id,
-                "price": list[i].price,
+                // "price": list[i].price,
                 "number": list[i].number
             });
         }
@@ -216,19 +216,17 @@ Page({
         http.request({
             url: '/cart/index',
             sCallback: res => {
-                var resp = res.data;
-                if (res.statusCode != 200) {
-                    app.alert({'content': resp.msg});
-                    return;
-                }
                 this.setData({
-                    list: resp.list,
+                    list: res.list,
                     saveHidden: true,
                     totalPrice: 0.00,
                     allSelect: true,
                     noSelect: false
                 });
                 that.setPageData(that.getSaveHide(), that.totalPrice(), that.allSelect(), that.noSelect(), that.data.list);
+            },
+            eCallback: res => {
+                app.alert({'content': res.msg});
             }
         });
     },
@@ -256,11 +254,9 @@ Page({
             method: 'POST',
             data: data,
             sCallback: res => {
-                // var resp = res.data;
-                // if (res.statusCode != 200) {
-                //     app.alert({'content': resp.msg});
-                //     return;
-                // }
+            },
+            eCallback: res => {
+                app.alert({'content': res.msg});
             }
         });
     }

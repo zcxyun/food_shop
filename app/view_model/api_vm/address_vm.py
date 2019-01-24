@@ -15,5 +15,6 @@ class AddressViewModel(BaseViewModel):
 
 class AddressCollection:
 
-    def fill(self, address_list):
+    @staticmethod
+    def fill(address_list):
         return [AddressViewModel(address) for address in address_list]

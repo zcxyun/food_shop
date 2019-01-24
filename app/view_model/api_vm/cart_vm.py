@@ -19,5 +19,6 @@ class CartViewModel(BaseViewModel):
 
 class CartCollection:
 
-    def fill(self, cart_list):
+    @staticmethod
+    def fill(cart_list):
         return [CartViewModel(cart) for cart in cart_list]

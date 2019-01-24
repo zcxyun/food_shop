@@ -1,21 +1,19 @@
 import Base from 'base.js';
-import Config from 'config.js';
 
 export default class Address extends Base {
     /**
      * 获得自己的收货地址
      * @param callback
      */
-    getAddress(callback) {
-        this.request({
-            url: '/address/get',
-            sCallback: res => {
-                let resp = res.data;
-                res.totalDetail = this.setAddressInfo(resp);
-                callback && callback(resp);
-            }
-        });
-    }
+    // getAddress(callback) {
+    //     this.request({
+    //         url: '/address/get',
+    //         sCallback: res => {
+    //             res.totalDetail = this.setAddressInfo(res);
+    //             callback && callback(res);
+    //         }
+    //     });
+    // }
 
     /**
      * 处理要返回的地址信息
@@ -49,36 +47,36 @@ export default class Address extends Base {
      * @param data
      * @param callback
      */
-    submitAddress(data, callback) {
-        data = this._setUpAddress(data);
-        this.request({
-            url: '/address/set',
-            method: 'POST',
-            data: data,
-            sCallback: res => {
-                callback && callback(true, res.data);
-            },
-            eCallback: res => {
-                callback && callback(false, res.data);
-            }
-        })
-    }
+    // submitAddress(data, callback) {
+    //     data = this._setUpAddress(data);
+    //     this.request({
+    //         url: '/address/set',
+    //         method: 'POST',
+    //         data: data,
+    //         sCallback: res => {
+    //             callback && callback(true, res.data);
+    //         },
+    //         eCallback: res => {
+    //             callback && callback(false, res.data);
+    //         }
+    //     })
+    // }
 
     /**
      * 处理地址信息
      * @param data
-     * @returns {{name: *, mobile: *, province: *, city: *, county: *, detail: *}}
+     * @returns {{userName: *, telNumber: *, provinceName: *, cityName: *, countyName: *, detailInfo: *}}
      * @private
      */
-    _setUpAddress(data) {
-        let formData = {
-            nickname: data.userName,
-            mobile: data.telNumber,
-            province: data.provinceName,
-            city: data.cityName,
-            county: data.countyName,
-            detail: data.detailInfo
-        }
-        return formData;
-    }
+    // _setUpAddress(data) {
+    //     let formData = {
+    //         userName: data.userName,
+    //         telNumber: data.telNumber,
+    //         provinceName: data.provinceName,
+    //         cityName: data.cityName,
+    //         countyName: data.countyName,
+    //         detailInfo: data.detailInfo
+    //     }
+    //     return formData;
+    // }
 }

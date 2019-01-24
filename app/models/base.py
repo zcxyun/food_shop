@@ -76,6 +76,14 @@ class Base(db.Model):
     def format_update_time(self):
         return date_to_str(datetime.fromtimestamp(self.update_time))
 
+    @property
+    def date_create_time(self):
+        return datetime.fromtimestamp(self.create_time)
+
+    @property
+    def date_update_time(self):
+        return datetime.fromtimestamp(self.update_time)
+
     def __getitem__(self, item):
         """对象转换为字典的必要方法"""
         return getattr(self, item)

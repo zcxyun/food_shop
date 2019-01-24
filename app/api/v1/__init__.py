@@ -3,6 +3,7 @@ from . import member
 from . import food
 from . import cart
 from . import order
+from . import my
 
 
 def create_blueprint_v1():
@@ -11,4 +12,5 @@ def create_blueprint_v1():
     food.api.register(bp_v1)
     cart.api.register(bp_v1)
     order.api.register(bp_v1)
+    my.api.register(bp_v1)
     return bp_v1

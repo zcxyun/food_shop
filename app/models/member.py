@@ -13,6 +13,7 @@ class Member(Base):
     reg_ip = Column(String(100), comment='注册IP')
     auth = Column(SmallInteger, nullable=False, default=1, comment='用户权限: 1, UserScope; 2, AdminScope')
 
+    orders = relationship('Order', backref='member', lazy='dynamic')
     addresses = relationship('MemberAddress', backref='member', lazy='dynamic')
     carts = relationship('MemberCart', backref='member', lazy='dynamic')
     clients = relationship('MemberClient', backref='member', lazy='dynamic')

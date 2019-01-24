@@ -1,3 +1,5 @@
+import Base from '../../utils/base.js';
+const http = new Base();
 var app = getApp();
 Page({
     data: {
@@ -23,20 +25,30 @@ Page({
     },
     getCommentList:function(){
         var that = this;
-        wx.request({
-            url: app.buildUrl("/my/comment/list"),
-            header: app.getRequestHeader(),
-            success: function (res) {
-                var resp = res.data;
-                if (resp.code != 200) {
-                    app.alert({"content": resp.msg});
-                    return;
-                }
-
+        // wx.request({
+        //     url: app.buildUrl("/my/comment/list"),
+        //     header: app.getRequestHeader(),
+        //     success: function (res) {
+        //         var resp = res.data;
+        //         if (resp.code != 200) {
+        //             app.alert({"content": resp.msg});
+        //             return;
+        //         }
+        //
+        //         that.setData({
+        //             list: resp.data.list
+        //         });
+        //     }
+        // });
+        http.request({
+            url: '/my/comments',
+            sCallback: res => {
                 that.setData({
-                    list: resp.data.list
+                    // list: res.list
                 });
-
+            },
+            eCallback: res => {
+                app.alert({'content': res.msg});
             }
         });
     }

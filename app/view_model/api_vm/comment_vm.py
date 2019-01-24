@@ -17,5 +17,21 @@ class CommentViewModel(BaseViewModel):
 
 class CommentCollection:
 
-    def fill(self, comments):
+    @staticmethod
+    def fill(comments):
         return [CommentViewModel(comment) for comment in comments]
+
+
+class MyCommentViewModel(BaseViewModel):
+
+    def __init__(self, comment):
+        self.date = comment.format_create_time
+        self.content = comment.content
+        self.order_number = comment.order.order_number
+
+
+class MyCommentCollection:
+
+    @staticmethod
+    def fill(comments):
+        return [MyCommentViewModel(comment) for comment in comments]

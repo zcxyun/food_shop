@@ -1,5 +1,6 @@
 from .base import db
 from .base import Base
+from .access_token import AccessToken
 from .food import Food
 from .food_cat import FoodCat
 from .app_access_log import AppAccessLog
@@ -14,6 +15,7 @@ from .member_client import MemberClient
 from .member_comment import MemberComment
 from .order_food import OrderFood
 from .order import Order
+from .order_callback_data import OrderCallbackData
 from .stat_daily_food import StatDailyFood
 from .stat_daily_member import StatDailyMember
 from .stat_daily_site import StatDailySite

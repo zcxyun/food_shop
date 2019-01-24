@@ -16,7 +16,7 @@ class DeleteSuccess(Success):
 class ClientTypeException(APIException):
     code = 400
     error_code = 1006
-    msg = 'client is invalid'
+    msg = '客户端类型无效'
 
 
 class ParameterException(APIException):
@@ -49,7 +49,19 @@ class Forbidden(APIException):
     msg = '禁止访问，权限不够'
 
 
+class OrderException(APIException):
+    code = 404
+    error_code = 8000
+    msg = '订单不存在，请检查ID'
+
+
+class OrderStatusException(APIException):
+    code = 404
+    error_code = 8001
+    msg = '订单状态不符合规范'
+
+
 class UnderStock(APIException):
     code = 400
-    error_code = 1010
+    error_code = 8002
     msg = '对不起，库存不足'

@@ -1,16 +1,21 @@
 import Base from '../../utils/base.js';
+import Address from '../../utils/address.js';
+
 const http = new Base();
+const address = new Address();
 var app = getApp();
 
 Page({
     data: {
         goods_list: [],
-        default_address: null,
+        // default_address: null,
         yun_price: "0.00",
         pay_price: "0.00",
         total_price: "0.00",
         params: null,
-        express_address_id:0
+        address: null,
+        addressInfo: ''
+        // express_address_id:0,
     },
     onLoad: function (e) {
         var that = this;
@@ -20,15 +25,16 @@ Page({
     },
     onShow: function () {
         var that = this;
-         this.getOrderInfo();
+        this.getOrderInfo();
     },
     createOrder: function (e) {
         wx.showLoading();
         var that = this;
         var data = {
-            type: this.data.params.type,
-            goods: JSON.stringify(this.data.params.goods),
-            express_address_id: that.data.default_address.id
+            type: that.data.params.type,
+            goods: JSON.stringify(that.data.params.goods),
+            // express_address_id: that.data.default_address.id
+            address: JSON.stringify(that.data.address)
         };
         // wx.request({
         //     url: app.buildUrl("/order/create"),
@@ -37,9 +43,9 @@ Page({
         //     data: data,
         //     success: function (res) {
         //         wx.hideLoading();
-        //         var resp = res.data;
-        //         if (resp.code != 200) {
-        //             app.alert({"content": resp.msg});
+        //         var res = res.data;
+        //         if (res.code != 200) {
+        //             app.alert({"content": res.msg});
         //             return;
         //         }
         //         wx.navigateTo({
@@ -53,14 +59,12 @@ Page({
             data: data,
             sCallback: res => {
                 wx.hideLoading();
-                let resp = res.data;
-                if (res.statusCode != 200) {
-                    app.alert({'content': resp.msg})
-                    return;
-                }
-                wx.navigateTo({
+                wx.redirectTo({
                     url: '/pages/my/order_list'
                 });
+            },
+            eCallback: res => {
+                app.alert({'content': res.msg});
             }
         });
     },
@@ -75,8 +79,21 @@ Page({
         // });
         wx.chooseAddress({
             success: res => {
-                
-            } 
+                this.setData({
+                    address: {
+                        userName: res.userName,
+                        postalCode: res.postalCode,
+                        provinceName: res.provinceName,
+                        cityName: res.cityName,
+                        countyName: res.countyName,
+                        detailInfo: res.detailInfo,
+                        nationalCode: res.nationalCode,
+                        telNumber: res.telNumber,
+                        errMsg: res.errMsg
+                    },
+                    addressInfo: address.setAddressInfo(res)
+                });
+            }
         });
     },
     getOrderInfo: function () {
@@ -91,18 +108,18 @@ Page({
         //     method: 'POST',
         //     data: data,
         //     success: function (res) {
-        //         var resp = res.data;
-        //         if (resp.code != 200) {
-        //             app.alert({"content": resp.msg});
+        //         var res = res.data;
+        //         if (res.code != 200) {
+        //             app.alert({"content": res.msg});
         //             return;
         //         }
         //
         //         that.setData({
-        //             goods_list: resp.data.food_list,
-        //             default_address: resp.data.default_address,
-        //             yun_price: resp.data.yun_price,
-        //             pay_price: resp.data.pay_price,
-        //             total_price: resp.data.total_price,
+        //             goods_list: res.data.food_list,
+        //             default_address: res.data.default_address,
+        //             yun_price: res.data.yun_price,
+        //             pay_price: res.data.pay_price,
+        //             total_price: res.data.total_price,
         //         });
         //
         //         if( that.data.default_address ){
@@ -117,19 +134,16 @@ Page({
             method: 'POST',
             data: data,
             sCallback: res => {
-                let resp = res.data;
-                if (res.statusCode != 200) {
-                    app.alert({'content': resp.msg})
-                    return;
-                }
                 this.setData({
-                    goods_list: resp.food_list,
-                    pay_price: resp.pay_price,
-                    yun_price: resp.yun_price,
-                    total_price: resp.total_price
+                    goods_list: res.food_list,
+                    pay_price: res.pay_price,
+                    yun_price: res.yun_price,
+                    total_price: res.total_price
                 });
+            },
+            eCallback: res => {
+                app.alert({'content': res.msg});
             }
         });
     }
-
 });

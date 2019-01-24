@@ -1,11 +1,12 @@
 import Token from 'token.js';
-import { base64_encode } from "./base64";
+import {base64_encode} from "./base64";
 import Config from 'config';
 
 export default class Base {
     constructor() {
         this.baseUrl = Config.getInstance().restUrl;
     }
+
     /**
      * 当 noRefetch 为 true 时，不做未授权重试机制
      * @param params
@@ -22,12 +23,12 @@ export default class Base {
         }
         wx.request({
             url: url,
-            method: params.method,
             header: {
-                'content-type': 'application/json',
+                'Content-Type': 'application/json',
                 'Authorization': 'Basic ' + base64_encode(
                     wx.getStorageSync('token') + ':')
             },
+            method: params.method,
             data: params.data,
             dataType: 'json',
             responseType: 'text',
@@ -35,14 +36,14 @@ export default class Base {
                 var code = res.statusCode.toString();
                 var startChar = code.charAt(0);
                 if (startChar === '2') {
-                    params.sCallback && params.sCallback(res);
+                    params.sCallback && params.sCallback(res.data);
                 } else {
                     if (code === '401') {
                         if (!noRefetch) {
                             this._refetch(params);
                         }
                     } else {
-                        params.eCallback && params.eCallback(res);
+                        params.eCallback && params.eCallback(res.data);
                     }
                 }
             },
