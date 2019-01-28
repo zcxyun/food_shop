@@ -1,12 +1,13 @@
 from flask import g, jsonify, current_app
 
-from app.libs.enums import OrderStatus, ClientType
-from app.libs.error_codes import Success, OrderException
+from app.libs.enums import ClientType
+from app.libs.error_codes import OrderException
 from app.libs.redprint import Redprint
 from app.libs.token import auth
 from app.models import Member, db
 from app.service.order import OrderService
-from app.service.wechat import WeChatService
+from app.libs.wechat import WeChatService
+from app.service.wx_notify import WxNotify
 from app.validators.api_forms.common_forms import GoodsForm
 from app.validators.api_forms.order_forms import OrderCreateForm, OrderOpsForm, OrderSnForm
 
@@ -80,7 +81,7 @@ def pay():
 
 @api.route('/callback', methods=['POST'])
 def callback():
-    pass
+    return WxNotify.notify_process()
 
 
 @api.route('/ops', methods=['POST'])

@@ -1,11 +1,12 @@
-from flask import request, render_template, current_app
+from flask import request, render_template, current_app, jsonify
 from flask_login import login_required
 from sqlalchemy import or_
 
-from app.models import db
+from app.models import db, MemberComment, Order
 from app.libs.error_codes import Success
 from app.libs.redprint import Redprint
 from app.models import Member
+from app.validators.cms_forms.common_forms import IdIsPositive
 from app.validators.cms_forms.member_forms import SetForm, IndexForm
 
 cms = Redprint('member')
@@ -30,7 +31,17 @@ def index():
 @cms.route('/info/<int:id>')
 @login_required
 def info(id):
-    pass
+    id = IdIsPositive().validate().id.data
+    member = Member.query.get_or_404_deleted(id, msg='找不到指定会员')
+    orders = member.orders.filter_by().order_by(Order.id.desc()).all()
+    comments = member.comments.filter_by().order_by(MemberComment.id.desc()).all()
+    resp = {
+        'info': member,
+        'pay_order_list': orders,
+        'comment_list': comments,
+        'current': 'index'
+    }
+    return render_template('member/info.html', **resp)
 
 
 @cms.route('/set/<int:id>', methods=['POST', 'GET'])
@@ -55,4 +66,4 @@ def ops(id):
 @cms.route('/comment')
 @login_required
 def comment():
-    pass
+

@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from app.models import Base
+from . import Base
 
 
 class AccessToken(Base):

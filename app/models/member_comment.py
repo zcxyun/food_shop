@@ -14,8 +14,8 @@ class MemberComment(Base):
     @property
     def score_desc(self):
         score_map = {
-            "10": "好评",
-            "6": "中评",
-            "0": "差评",
+            10: "好评",
+            6: "中评",
+            0: "差评",
         }
-        return score_map[str(self.score)]
+        return score_map[self.score]

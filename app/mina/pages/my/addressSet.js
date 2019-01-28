@@ -1,5 +1,4 @@
 //获取应用实例
-var commonCityData = require('../../utils/city.js');
 var app = getApp();
 Page({
     data: {

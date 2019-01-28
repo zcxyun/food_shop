@@ -1,7 +1,12 @@
-import hashlib, requests, uuid, datetime
+import hashlib, requests, uuid
+from datetime import datetime, timedelta
+import json
 import xml.etree.ElementTree as ET
 
 from flask import current_app
+
+from app.libs.utils import now_timestamp
+from app.models import AccessToken, db
 
 
 class WeChatService:
@@ -74,3 +79,29 @@ class WeChatService:
         :return:
         """
         return str(uuid.uuid4()).replace('-', '')
+
+    @staticmethod
+    def get_access_token():
+        token = None
+        token_info = AccessToken.query.filter_by(AccessToken.expired_time >= now_timestamp()).first()
+        if token_info:
+            token = token_info.access_token
+            return token
+
+        mina_config = current_app.config['MINA_APP']
+        url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={0}&secret={1}" \
+            .format(mina_config['appid'], mina_config['appkey'])
+        r = requests.get(url=url)
+        r.encoding = 'utf-8'
+        if r.status_code != 200 or not r.text:
+            return None
+
+        data = json.loads(r.text)
+        now = datetime.now()
+        date = now + timedelta(seconds=data['expires_in'] - 200)
+        with db.auto_commit():
+            token_info = AccessToken()
+            token_info.access_token = data['access_token']
+            token_info.expired_time = date.timestamp()
+            db.session.add(token_info)
+        return data['access_token']

@@ -2,6 +2,7 @@ import json
 from datetime import timedelta
 
 from app.libs.utils import buildImageUrl
+from app.service.address import AddressService
 from app.view_model.base import BaseViewModel
 
 
@@ -22,7 +23,7 @@ class OrderViewModel(BaseViewModel):
         self.freight = str(order.freight)
         self.total_price = str(order.total_price)
         self.address_dict = json.loads(order.snap_address)
-        self.address_str = self.set_address_info(self.address_dict)
+        self.address_str = AddressService().set_address_info(self.address_dict)
 
         goods_list = json.loads(order.snap_items)
         for goods in goods_list:
@@ -30,21 +31,6 @@ class OrderViewModel(BaseViewModel):
         self.goods_list = goods_list
 
         self.deadline = order.date_create_time + timedelta(minutes=30)
-
-    def set_address_info(self, address):
-        province = address['provinceName']
-        city = address['cityName']
-        county = address['countyName']
-        detail = address['detailInfo']
-        address_info = province + city + county + detail
-        if self.is_center_city(province):
-            address_info = city + county + detail
-        return address_info
-
-    @staticmethod
-    def is_center_city(province):
-        center_cities = ('北京市', '天津市', '上海市', '重庆市')
-        return province in center_cities
 
 
 class OrderCollection:

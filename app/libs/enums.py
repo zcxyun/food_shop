@@ -1,6 +1,11 @@
 from enum import Enum
 
 
+class Status(Enum):
+    EXIST = 1
+    DELETED = 0
+
+
 class OrderStatus(Enum):
     UNPAID = 0  # 待支付
     PAID = 1  # 已支付(待发货)
@@ -12,3 +17,8 @@ class OrderStatus(Enum):
 
 class ClientType(Enum):
     WECHAT = 1
+
+
+class QueueHandleStatus(Enum):
+    UNPROCESSED = 0
+    PROCESSED = 1

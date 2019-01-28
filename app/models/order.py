@@ -1,8 +1,11 @@
+from datetime import datetime
+
 from sqlalchemy import Column, Integer, String, Text, SmallInteger, DECIMAL, ForeignKey
 from sqlalchemy.orm import relationship, backref
 
 from app.libs.enums import OrderStatus
 from app.libs.error_codes import OrderStatusException
+from app.libs.utils import date_to_str
 from . import Base
 from . import OrderFood
 
@@ -15,6 +18,7 @@ class Order(Base):
     total_count = Column(Integer, nullable=False, comment='订单商品总数')
     freight = Column(DECIMAL, default=0.00, comment='运费')
     pay_price = Column(DECIMAL, nullable=False, comment='订单实付金额')
+    pay_time = Column(Integer, nullable=False, comment='会员支付到账时间')
     pay_sn = Column(String(128), comment='第三方流水号')
     prepay_id = Column(String(128), comment='第三方预付ID,订单微信支付的预订单id（用于发送模板消息）')
     note = Column(Text, comment='备注信息')
@@ -66,3 +70,7 @@ class Order(Base):
         order_number = self.date_create_time.strftime('%Y%m%d%H%M%S')
         order_number += str(self.id).zfill(5)
         return order_number
+
+    @property
+    def format_pay_time(self):
+        return date_to_str(datetime.fromtimestamp(self.pay_time))

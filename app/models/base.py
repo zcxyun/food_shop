@@ -66,23 +66,39 @@ class Base(db.Model):
     __abstract__ = True
     create_time = Column(Integer, nullable=False, default=now_timestamp, comment='创建时间')
     update_time = Column(Integer, nullable=False, default=now_timestamp, onupdate=now_timestamp, comment='更新时间')
-    status = Column(SmallInteger, nullable=False, default=1, comment='用户状态: 1, 存在; 0, 删除;')
+    status = Column(SmallInteger, nullable=False, default=1, comment='状态: 1, 存在; 0, 删除;')
 
     @property
     def format_create_time(self):
         return date_to_str(datetime.fromtimestamp(self.create_time))
+
+    @format_create_time.setter
+    def format_create_time(self, format_str):
+        self.create_time = datetime.strptime(format_str, '%Y-%m-%d %H:%M:%S').timestamp()
+
+    @property
+    def date_create_time(self):
+        return datetime.fromtimestamp(self.create_time)
+
+    @date_create_time.setter
+    def date_create_time(self, date_time):
+        self.create_time = date_time.timestamp()
 
     @property
     def format_update_time(self):
         return date_to_str(datetime.fromtimestamp(self.update_time))
 
     @property
-    def date_create_time(self):
-        return datetime.fromtimestamp(self.create_time)
-
-    @property
     def date_update_time(self):
         return datetime.fromtimestamp(self.update_time)
+
+    @property
+    def status_desc(self):
+        status_map = {
+            0: '已删除',
+            1: '正常'
+        }
+        return status_map[self.status]
 
     def __getitem__(self, item):
         """对象转换为字典的必要方法"""
@@ -121,3 +137,5 @@ class Base(db.Model):
             for key, value in attrs.items():
                 if key not in exclude_attr and hasattr(self, key):
                     setattr(self, key, value)
+
+

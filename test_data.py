@@ -1,3 +1,5 @@
+from sqlalchemy import func
+
 from app.models.base import db
 from app.models.food import Food
 from app.models.food_cat import FoodCat
@@ -35,9 +37,9 @@ def food_cat_data():
 def food_data():
     with app.app_context():
         with db.auto_commit():
-            food = Food.query.get(1)
+            # food = Food.query.get(1)
             # foodcat = food.food_cat
-            # food = db.session.query(Food).all()
+            food = db.session.query(Food.id, func.sum(Food.id)).first()
             # for i in food:
             #     print(i.food_cat)
         return
@@ -60,3 +62,4 @@ def user_data():
 
 
 # user_data()
+

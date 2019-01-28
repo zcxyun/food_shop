@@ -20,3 +20,12 @@ class Member(Base):
     comments = relationship('MemberComment', backref='member', lazy='dynamic')
     wx_share_histories = relationship('WxShareHistory', backref='member', lazy='dynamic')
     stat_daily_members = relationship('StatDailyMember', backref='member', lazy='dynamic')
+
+    @property
+    def sex_desc(self):
+        sex_map = {
+            0: '未选择',
+            1: '男',
+            2: '女'
+        }
+        return sex_map[self.sex]
