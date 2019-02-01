@@ -23,3 +23,4 @@ class Food(Base):
     stat_daily_foods = relationship('StatDailyFood', backref='food', lazy='dynamic')
     order_foods = relationship('OrderFood', backref='food', lazy='dynamic')
     carts = relationship('MemberCart', backref='food', lazy='dynamic')
+

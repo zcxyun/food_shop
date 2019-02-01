@@ -26,7 +26,11 @@ class Order(Base):
                           comment='订单状态: 0, 待支付; 1, 待发货; 2, 待收货; 3, 待评价; -1, 已关闭;')
     snap_img = Column(String(255), nullable=False, comment='订单快照图片')
     snap_name = Column(String(80), nullable=False, comment='订单快照名称')
+    # {"userName": "", "postalCode": "", "provinceName": "", "cityName": "", "countyName": "",
+    # "detailInfo": "", "nationalCode": "", "telNumber": "", "errMsg": "chooseAddress:ok"}
     snap_address = Column(String(500), nullable=False, comment='订单地址快照')
+    # [{"id": 3, "count": 3, "name": "", "p_total_price": "39",
+    # "p_price": "13", "main_image": "20190114/e71250679a9d406cbd6ab9ca44d7e695.jpg"}...]
     snap_items = Column(Text, nullable=False, comment='订单其他信息快照（json)')
 
     foods = relationship('Food', secondary=OrderFood.__table__,
@@ -35,8 +39,12 @@ class Order(Base):
 
     comments = relationship('MemberComment', backref='order', lazy='dynamic')
 
-    show_keys = ('id', 'order_sn', 'member_id', 'total_price', 'total_count', 'freight', 'pay_price',
-                 'note', 'order_status', 'snap_img', 'snap_name', 'snap_address', 'snap_items')
+    show_keys = (
+        'id', 'order_sn', 'member_id', 'total_price', 'total_count', 'freight', 'pay_price',
+        'note', 'order_status', 'snap_img', 'snap_name', 'snap_address', 'snap_items',
+        'order_status_enum', 'order_status_desc', 'order_number', 'format_pay_time', 'foods_finance',
+        'format_create_time'
+    )
 
     @property
     def order_status_enum(self):
@@ -74,3 +82,11 @@ class Order(Base):
     @property
     def format_pay_time(self):
         return date_to_str(datetime.fromtimestamp(self.pay_time))
+
+    # @property
+    # def foods_finance(self):
+    #     return [{
+    #         'name': item.food.name,
+    #         'quantity': item.quantity,
+    #         'total_price': item.total_price
+    #     } for item in self.order_foods]

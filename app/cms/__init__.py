@@ -7,6 +7,8 @@ from app.cms import account
 from app.cms import food
 from app.cms import upload
 from app.cms import member
+from app.cms import finance
+from app.cms import stat
 
 
 def create_blueprint_cms():
@@ -18,4 +20,6 @@ def create_blueprint_cms():
     food.cms.register(bp)
     upload.cms.register(bp)
     member.cms.register(bp)
+    finance.cms.register(bp)
+    stat.cms.register(bp)
     return bp

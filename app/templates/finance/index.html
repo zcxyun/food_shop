@@ -7,9 +7,9 @@
             <div class="row  m-t p-w-m">
                 <div class="form-group">
                     <select name="status" class="form-control inline">
-                        <option value="-1">请选择状态</option>
+                        <option value="-2">请选择状态</option>
                         {% for tmp_key in pay_status_mapping %}
-                        <option value="{{ tmp_key }}" {% if tmp_key == search_con['status']  %} selected {% endif %}>{{  pay_status_mapping[ tmp_key ] }}</option>
+                        <option value="{{ tmp_key }}" {% if tmp_key == resp['status']  %} selected {% endif %}>{{  pay_status_mapping[ tmp_key ] }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -29,21 +29,21 @@
             </tr>
             </thead>
             <tbody>
-            {% if list %}
-                {% for item in list %}
+            {% if pagination %}
+                {% for item in pagination.items %}
             <tr>
                 <td>{{ item.order_number }}</td>
                 <td>
-                    {% for item_food in item.foods %}
-                        {{ item_food.name }}  × {{ item_food.quantity }}
+                    {% for item_food in item.order_foods %}
+                        {{ item_food.food.name}}  × {{ item_food.quantity }}
                     {% endfor %}
                 </td>
-                <td>{{ item.price }}</td>
-                <td>{{ item.pay_time }}</td>
-                <td>{{ item.status_desc }}</td>
-                <td>{{ item.created_time }}</td>
+                <td>{{ item.total_price }}</td>
+                <td>{{ item.format_pay_time }}</td>
+                <td>{{ item.order_status_desc }}</td>
+                <td>{{ item.format_create_time }}</td>
                 <td>
-                    <a href="{{ buildUrl('/finance/pay-info') }}?id={{ item.id }}">
+                    <a href="{{ url_for('cms.finance+pay_info', id=item.id ) }}">
                         <i class="fa fa-eye fa-lg"></i>
                     </a>
                 </td>
@@ -60,5 +60,5 @@
 </div>
 {% endblock %}
 {% block js %}
-<script src="{{ buildStaticUrl('/js/finance/index.js') }}"></script>
+<script src="{{ url_for('static', filename='js/finance/index.js') }}"></script>
 {% endblock %}

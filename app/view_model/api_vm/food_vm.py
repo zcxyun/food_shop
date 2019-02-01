@@ -3,7 +3,7 @@ from app.view_model.base import BaseViewModel
 
 
 class FoodViewModel(BaseViewModel):
-    show_keys = ['id', 'name', 'summary', 'price', 'min_price', 'stock',
+    show_keys = ['id', 'name', 'summary', 'total_price', 'min_price', 'stock',
                  'total_count', 'comment_count', 'main_image', 'pic_url', 'pics']
 
     def __init__(self, food):
@@ -27,4 +27,4 @@ class FoodCollection:
     @staticmethod
     def fill(foods):
         return [FoodViewModel(food).show(
-            'id', 'name', 'price', 'min_price', 'pic_url') for food in foods]
+            'id', 'name', 'total_price', 'min_price', 'pic_url') for food in foods]

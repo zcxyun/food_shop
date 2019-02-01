@@ -12,3 +12,4 @@ class OrderFood(Base):
     food_name = Column(String(30), nullable=False, comment='商品名称快照')
     food_img = Column(String(100), nullable=False, comment='商品图片快照')
 
+    show_keys = ('id', 'order_id', 'food_id', 'quantity', 'total_price', 'food_name', 'food_img')

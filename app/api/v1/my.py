@@ -72,7 +72,7 @@ def add_comment():
     if order.order_status_enum == OrderStatus.DONE:
         raise OrderException(msg='订单已经评价过了, 不需要再评价了')
     food_id_list = [food.id for food in order.foods]
-    food_ids_str = '_{}_'.format('_'.join(food_id_list))
+    food_ids_str = '_'.join(food_id_list)
     with db.auto_commit():
         comment = MemberComment()
         comment.food_ids = food_ids_str

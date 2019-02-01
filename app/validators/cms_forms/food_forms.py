@@ -1,11 +1,13 @@
 from decimal import Decimal
+
 from wtforms import StringField, ValidationError, IntegerField
-from wtforms.validators import NumberRange, DataRequired, Length, AnyOf, Regexp
+from wtforms.validators import NumberRange, DataRequired, Length, Regexp
 
-from app.validators.base import IndexBaseForm, BaseForm, OpsBaseForm
+from app.validators.base import BaseForm
+from app.validators.cms_forms.common_forms import SplitPageForm
 
 
-class IndexForm(IndexBaseForm):
+class FoodIndexForm(SplitPageForm):
     cat_id = StringField(default='0')
 
     def validate_cat_id(self, field):
@@ -13,7 +15,7 @@ class IndexForm(IndexBaseForm):
             raise ValidationError('商品种类ID不能小于0')
 
 
-class SetForm(BaseForm):
+class FoodSetForm(BaseForm):
     id = IntegerField(validators=[NumberRange(0, message='商品ID不能小于0')], default=0)
     cat_id = StringField(validators=[DataRequired(message='请指定商品种类')])
     name = StringField(validators=[DataRequired(message='请指定商品名'), Length(
@@ -39,15 +41,7 @@ class SetForm(BaseForm):
         self.stock.data = int(field.data)
 
 
-class OpsForm(OpsBaseForm):
-    pass
-
-
-class CategoryForm(IndexBaseForm):
-    pass
-
-
-class CategorySetForm(BaseForm):
+class FoodCategorySetForm(BaseForm):
     id = IntegerField(validators=[NumberRange(min=0, message='无效ID值')], default=0)
     name = StringField(validators=[DataRequired(message='请输入分类名'), Length(2, 10, message='分类名称是2到10个字符')])
     weight = StringField(default='1')
@@ -55,7 +49,3 @@ class CategorySetForm(BaseForm):
     def validate_weight(self, field):
         if not field.data.isdigit() or int(field.data) < 1:
             raise ValidationError('权重值必须大于等于1')
-
-
-class CategoryOpsForm(OpsBaseForm):
-    pass

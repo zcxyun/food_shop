@@ -32,7 +32,7 @@ var stat_index_ops = {
     drawChart:function(){
         charts_ops.setOption();
         $.ajax({
-            url:common_ops.buildUrl("/chart/finance"),
+            url:common_ops.buildUrl("/cms/chart/finance"),
             dataType:'json',
             success:function( res ){
                 charts_ops.drawLine( $('#container'),res.data )

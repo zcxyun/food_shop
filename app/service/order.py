@@ -57,7 +57,7 @@ class OrderService:
         return {
             'id': data.id,
             'name': data.name,
-            'price': str(data.price),
+            'total_price': str(data.price),
             'pic_url': buildImageUrl(data.main_image),
             'number': self.products_dic[data.id]
         }

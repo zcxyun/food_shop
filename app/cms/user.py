@@ -6,7 +6,7 @@ from app.libs.error_codes import Success
 from app.libs.redprint import Redprint
 from app.models import AppAccessLog
 from app.models import User
-from app.validators.cms_forms.user_forms import LoginForm, EditForm, ResetPwdForm
+from app.validators.cms_forms.user_forms import UserLoginForm, UserEditForm, UserResetPwdForm
 
 cms = Redprint('user')
 
@@ -16,7 +16,7 @@ def login():
     if current_user.is_authenticated:
         return redirect(url_for('cms.index+index'))
     if request.method == 'POST':
-        form = LoginForm().validate()
+        form = UserLoginForm().validate()
         user = User.verify(form.login_name.data, form.login_pwd.data)
         login_user(user)
         # 添加登录日志
@@ -33,7 +33,7 @@ def login():
 @login_required
 def edit():
     if request.method == 'POST':
-        form = EditForm().validate()
+        form = UserEditForm().validate()
         with db.auto_commit():
             current_user.nickname = form.nickname.data
             current_user.email = form.email.data
@@ -46,7 +46,7 @@ def edit():
 @login_required
 def reset_pwd():
     if request.method == 'POST':
-        form = ResetPwdForm().validate()
+        form = UserResetPwdForm().validate()
         with db.auto_commit():
             current_user.password = form.new_password.data
             db.session.add(current_user)

@@ -13,20 +13,21 @@ from food_shop import app
 stat = Manager()
 
 
-@stat.option('-a', '--name', dest='act', metavar='act', help='job动作', required=True)
-@stat.option('-d', '--date', dest='param',
-             metavar='param', nargs='*', help='业务参数', required=False)
+@stat.option('-a', '--name', dest='act', help='job动作', required=True)
+@stat.option('-d', '--date', dest='date', help='业务参数', required=True)
 def stat_daily(act, date):
+    # app.logger.info('{}-{}'.format(act, date))
     if act not in ('member', 'food', 'site', 'test'):
         return
     try:
         datetime.strptime(date, '%Y-%m-%d')
     except ValueError:
         return
+
     date_from = date + ' 00:00:00'
     date_to = date + ' 23:59:59'
 
-    app.logger.info("act:{0},from:{1},to:{2}".format(act, date_from, date_to))
+    app.logger.info("act: {0}, from: {1}, to: {2}".format(act, date_from, date_to))
 
     date_from_timestamp, date_to_timestamp = get_timestamp(date)
 
@@ -36,10 +37,6 @@ def stat_daily(act, date):
         stat_food(date, date_from_timestamp, date_to_timestamp)
     elif act == 'site':
         stat_site(date, date_from_timestamp, date_to_timestamp)
-    elif act == 'test':
-        stat_test()
-
-    app.logger.info('统计完成')
 
 
 def stat_member(date, date_from_timestamp, date_to_timestamp):
@@ -67,6 +64,7 @@ def stat_member(date, date_from_timestamp, date_to_timestamp):
             ).filter(
                 Order.member_id == member.id, Order.status == Status.EXIST.value,
                 Order.order_status != OrderStatus.UNPAID.value,
+                Order.order_status != OrderStatus.CLOSE.value,
                 Order.create_time >= date_from_timestamp,
                 Order.create_time <= date_to_timestamp
             ).first()
@@ -83,7 +81,7 @@ def stat_member(date, date_from_timestamp, date_to_timestamp):
             stat_member.total_pay_money = randint(50, 100)
             stat_member.total_share_count = randint(1000, 1010)
             db.session.add(stat_member)
-    pass
+    app.logger.info('会员日统计统计完成')
 
 
 def stat_food(date, date_from_timestamp, date_to_timestamp):
@@ -96,7 +94,7 @@ def stat_food(date, date_from_timestamp, date_to_timestamp):
     """
     # 从已售卖表中按商品ID分组提取 总售卖数量 总售卖价格
     stat_foods = db.session.query(
-        FoodSaleChangeLog.food_id, func.sum(FoodSaleChangeLog.total_count).label('total_count'),
+        FoodSaleChangeLog.food_id, func.sum(FoodSaleChangeLog.quantity).label('total_count'),
         func.sum(FoodSaleChangeLog.total_price).label('total_price')
     ).filter(
         FoodSaleChangeLog.status == Status.EXIST.value,
@@ -122,6 +120,7 @@ def stat_food(date, date_from_timestamp, date_to_timestamp):
             stat_food_info.total_price = randint(50, 100)
             stat_food_info.total_count = randint(1000, 1010)
             db.session.add(stat_food_info)
+    app.logger.info('商品日统计统计完成')
 
 
 def stat_site(date, date_from_timestamp, date_to_timestamp):
@@ -136,15 +135,19 @@ def stat_site(date, date_from_timestamp, date_to_timestamp):
     stat_money = db.session.query(
         func.sum(Order.total_price).label('total_money')
     ).filter(
-        Order.order_status != OrderStatus.UNPAID.value, Order.status == Status.EXIST.value,
-        Order.create_time >= date_from_timestamp, Order.create_time <= date_to_timestamp
+        Order.order_status != OrderStatus.UNPAID.value,
+        Order.order_status != OrderStatus.CLOSE.value,
+        Order.status == Status.EXIST.value,
+        Order.create_time >= date_from_timestamp,
+        Order.create_time <= date_to_timestamp
     ).first()
     # 统计全站会员总数
     stat_all_member_count = Member.query.filter_by(status=Status.EXIST.value).count()
     # 统计全站日会员总数
     stat_member_count = Member.query.filter(
         Member.status == Status.EXIST.value,
-        Member.create_time >= date_from_timestamp, Member.create_time <= date_to_timestamp
+        Member.create_time >= date_from_timestamp,
+        Member.create_time <= date_to_timestamp
     ).count()
     # 统计全站日订单总数
     stat_order_count = Order.query.filter(
@@ -176,8 +179,10 @@ def stat_site(date, date_from_timestamp, date_to_timestamp):
         stat_site.order_count = randint(300, 1000)
         stat_site.share_count = randint(500, 2000)
         db.session.add(stat_site)
+    app.logger.info('全站日统计统计完成')
 
 
+@stat.command
 def stat_test():
     """
     模拟模拟数据测试统计往前一个月的数据
@@ -192,6 +197,7 @@ def stat_test():
         stat_member(*params)
         stat_food(*params)
         stat_site(*params)
+    app.logger.info('测试统计完成')
 
 
 def test_food(date):
@@ -205,11 +211,11 @@ def test_food(date):
     with db.auto_commit():
         for item in foods:
             model = FoodSaleChangeLog()
-            model.food_id = item.food_id
+            model.food_id = item.id
             model.quantity = randint(1, 10)
-            model.price = model.quantity * item.price
+            model.total_price = model.quantity * item.price
             model.member_id = 1
-            model.format_create_time = '{} {}'.format(date, date_to_str('%H:%M:%S'))
+            model.format_create_time = '{} {}'.format(date, date_to_str(format='%H:%M:%S'))
             db.session.add(model)
 
 

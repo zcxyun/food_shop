@@ -21,7 +21,7 @@ class PayService:
                 food_sale_log = FoodSaleChangeLog()
                 food_sale_log.food_id = item.food_id
                 food_sale_log.quantity = item.quantity
-                food_sale_log.price = item.total_price
+                food_sale_log.total_price = item.total_price
                 food_sale_log.member_id = order.member_id
                 db.session.add(food_sale_log)
 

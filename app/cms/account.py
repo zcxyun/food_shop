@@ -7,7 +7,8 @@ from app.libs.redprint import Redprint
 from app.models import AppAccessLog
 from app.models import User
 from app.models import db
-from app.validators.cms_forms.account_forms import IndexForm, SetForm, OpsForm
+from app.validators.cms_forms.account_forms import AccountSetForm
+from app.validators.cms_forms.common_forms import SplitPageForm, OpsForm
 
 cms = Redprint('account')
 
@@ -15,7 +16,7 @@ cms = Redprint('account')
 @cms.route('/index')
 @login_required
 def index():
-    form = IndexForm().validate()
+    form = SplitPageForm().validate()
     q, page, status = '%{}%'.format(form.query_kw.data), int(form.page.data), int(form.status.data)
     resp = {'query_kw': form.query_kw.data, 'status': form.status.data}
     rule = or_(User.nickname.ilike(q), User.mobile.ilike(q))
@@ -44,7 +45,7 @@ def set(id):
     if id:
         user = User.query.get_or_404_deleted(id, msg='对不起，找不到指定用户')
     if request.method == 'POST':
-        form = SetForm().validate()
+        form = AccountSetForm().validate()
         with db.auto_commit():
             if not user:
                 user = User()

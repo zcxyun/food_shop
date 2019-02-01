@@ -2,14 +2,14 @@ from flask import current_app, render_template, request
 from flask_login import login_required
 from sqlalchemy import or_
 
-from app.models import db
-from app.libs.error_codes import Success, DeleteSuccess, NotFound
+from app.libs.error_codes import Success, DeleteSuccess
 from app.libs.redprint import Redprint
 from app.models import Food
 from app.models import FoodCat
 from app.models import FoodStockChangeLog
-from app.validators.cms_forms.food_forms import IndexForm, CategoryForm, CategorySetForm, CategoryOpsForm, SetForm, \
-    OpsForm
+from app.models import db
+from app.validators.cms_forms.common_forms import SplitPageForm, OpsForm
+from app.validators.cms_forms.food_forms import FoodIndexForm, FoodCategorySetForm, FoodSetForm
 
 cms = Redprint('food')
 
@@ -17,7 +17,7 @@ cms = Redprint('food')
 @cms.route('/index')
 @login_required
 def index():
-    form = IndexForm().validate()
+    form = FoodIndexForm().validate()
     q = '%{}%'.format(form.query_kw.data)
     page, status, cat_id = int(form.page.data), int(form.status.data), int(form.cat_id.data)
     resp = {
@@ -60,7 +60,7 @@ def set(id):
         food = Food.query.get_or_404_deleted(id, msg='找不到指定商品')
     cat_list = FoodCat.query.all()
     if request.method == 'POST':
-        form = SetForm().validate()
+        form = FoodSetForm().validate()
         with db.auto_commit():
             if not food:
                 food = Food()
@@ -92,7 +92,7 @@ def ops(id):
 @cms.route('/category')
 @login_required
 def category():
-    form = CategoryForm().validate()
+    form = SplitPageForm().validate()
     q = '%{}%'.format(form.query_kw.data)
     page, status = int(form.page.data), int(form.status.data)
     query = FoodCat.query
@@ -116,7 +116,7 @@ def category_set(id):
     if id:
         food_cat = FoodCat.query.get_or_404_deleted(id, msg='未找到指定分类')
     if request.method == 'POST':
-        form = CategorySetForm().validate()
+        form = FoodCategorySetForm().validate()
         with db.auto_commit():
             if not food_cat:
                 food_cat = FoodCat()
@@ -130,7 +130,7 @@ def category_set(id):
 @cms.route('/category_ops/<int:id>', methods=['POST'])
 @login_required
 def category_ops(id):
-    form = CategoryOpsForm().validate()
+    form = OpsForm().validate()
     food_cat = FoodCat.query.get_or_404(id, msg='未找到指定分类')
     act = form.act.data
     with db.auto_commit():

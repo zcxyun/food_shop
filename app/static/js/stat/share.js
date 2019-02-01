@@ -32,7 +32,7 @@ var stat_share_ops = {
     drawChart:function(){
         charts_ops.setOption();
         $.ajax({
-            url:common_ops.buildUrl("/chart/share"),
+            url:common_ops.buildUrl("/cms/chart/share"),
             dataType:'json',
             success:function( res ){
                 charts_ops.drawLine( $('#container'),res.data )

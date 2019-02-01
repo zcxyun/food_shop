@@ -32,11 +32,9 @@ function fix_height() {
     if (navbarHeigh > wrapperHeigh) {
         $('#page-wrapper').css("min-height", navbarHeigh + "px");
     }
-
     if (navbarHeigh < wrapperHeigh) {
         $('#page-wrapper').css("min-height", $(window).height() + "px");
     }
-
     if ($('body').hasClass('fixed-nav')) {
         if (navbarHeigh > wrapperHeigh) {
             $('#page-wrapper').css("min-height", navbarHeigh - 60 + "px");
@@ -44,7 +42,6 @@ function fix_height() {
             $('#page-wrapper').css("min-height", $(window).height() - 60 + "px");
         }
     }
-
 }
 
 var common_ops = {
@@ -68,40 +65,24 @@ var common_ops = {
         if ($("#side-menu li").size() < 1) {
             return;
         }
-
         var pathname = window.location.pathname;
         var nav_name = "default";
 
-
         if (pathname.indexOf("/account") > -1) {
             nav_name = "account";
-        }
-
-
-        if (pathname.indexOf("/food") > -1) {
+        } else if (pathname.indexOf("/food") > -1) {
             nav_name = "food";
-        }
-
-        if (pathname.indexOf("/member") > -1) {
+        } else if (pathname.indexOf("/member") > -1) {
             nav_name = "member";
-        }
-
-        if (pathname.indexOf("/finance") > -1) {
+        } else if (pathname.indexOf("/finance") > -1) {
             nav_name = "finance";
-        }
-
-        if (pathname.indexOf("/qrcode") > -1) {
+        } else if (pathname.indexOf("/qrcode") > -1) {
             nav_name = "market";
-        }
-
-        if (pathname.indexOf("/stat") > -1) {
+        } else if (pathname.indexOf("/stat") > -1) {
             nav_name = "stat";
-        }
-
-        if (nav_name == null) {
+        } else {
             return;
         }
-
         $("#side-menu li." + nav_name).addClass("active");
     },
     alert: function (msg, cb) {
@@ -211,6 +192,7 @@ function errorTipOrAlert(res, showFunc, dataNode = null, callback = null) {
                     break;
                 } else {
                     common_ops.alert(msg[i][0], callback);
+                    break;
                 }
             }
         } else if (showFunc === 'alert') {

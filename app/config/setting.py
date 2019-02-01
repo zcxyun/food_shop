@@ -30,6 +30,12 @@ STATUS_MAPPING = {
     "0": "已删除"
 }
 
+SCORE_SELECT = {
+    0: '差评',
+    1: '一般',
+    2: '好评'
+}
+
 MINA_APP = {
     'appid': 'wxfdcf36f2bf5d2af2',
     'appkey': '077c598d13e70592c6741f88c348b8b7',
@@ -44,17 +50,17 @@ UPLOAD = {
     'prefix_url': '/static/upload/'
 }
 
-# PAY_STATUS_MAPPING = {
-#     "1": "已支付",
-#     "-8": "待支付",
-#     "0": "已关闭"
-# }
-#
-# PAY_STATUS_DISPLAY_MAPPING = {
-#     "0": "订单关闭",
-#     "1": "支付成功",
-#     "-8": "待支付",
-#     "-7": "待发货",
-#     "-6": "待确认",
-#     "-5": "待评价"
-# }
+PAY_STATUS_MAPPING = {
+    "1": "已支付",
+    "0": "待支付",
+    "-1": "已关闭"
+}
+
+PAY_STATUS_DISPLAY_MAPPING = {
+    "-1": "订单关闭",
+    "0": "待支付",
+    "1": "支付成功",
+    "2": "待发货",
+    "3": "待确认",
+    "4": "待评价"
+}

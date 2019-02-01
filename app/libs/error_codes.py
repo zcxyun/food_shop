@@ -65,3 +65,9 @@ class UnderStock(APIException):
     code = 400
     error_code = 8002
     msg = '对不起，库存不足'
+
+
+class ScoreException(APIException):
+    code = 400
+    error_code = 3001
+    msg = '评分不符合规范'

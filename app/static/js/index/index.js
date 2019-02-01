@@ -6,7 +6,7 @@ var dashboard_index_ops = {
     drawChart:function(){
         charts_ops.setOption();
         $.ajax({
-            url:common_ops.buildUrl("/chart/dashboard"),
+            url:common_ops.buildUrl("/cms/chart/dashboard"),
             dataType:'json',
             success:function( res ){
                 charts_ops.drawLine( $('#member_order'),res.data )
@@ -14,7 +14,7 @@ var dashboard_index_ops = {
         });
 
         $.ajax({
-            url:common_ops.buildUrl("/chart/finance"),
+            url:common_ops.buildUrl("/cms/chart/finance"),
             dataType:'json',
             success:function( res ){
                 charts_ops.drawLine( $('#finance'),res.data )

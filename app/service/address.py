@@ -1,6 +1,11 @@
 class AddressService:
 
     def set_address_info(self, address):
+        """
+        根据传进来的字典地址合成详细字符串地址
+        :param address:
+        :return: 字符串地址
+        """
         address_info = ''
         if type(address) == dict:
             province = address.get('provinceName', '')

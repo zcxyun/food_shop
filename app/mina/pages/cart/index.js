@@ -137,7 +137,7 @@ Page({
             }
             data['goods'].push({
                 "id": list[i].food_id,
-                // "price": list[i].price,
+                // "total_price": list[i].total_price,
                 "number": list[i].number
             });
         }

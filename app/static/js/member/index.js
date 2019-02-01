@@ -41,7 +41,6 @@ var member_index_ops = {
         };
         common_ops.confirm( ( act == "remove" ? "确定删除？":"确定恢复？" ), callback );
     }
-
 };
 
 $(document).ready( function(){
