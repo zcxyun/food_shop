@@ -33,24 +33,6 @@ Page({
     },
     getPayOrder: function () {
         var that = this;
-        // wx.request({
-        //     url: app.buildUrl("/my/order"),
-        //     header: app.getRequestHeader(),
-        //     data: {
-        //         status: that.data.status[ that.data.currentType ]
-        //     },
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         if (resp.code != 200) {
-        //             app.alert({"content": resp.msg});
-        //             return;
-        //         }
-        //
-        //         that.setData({
-        //            order_list:resp.data.pay_order_list
-        //         });
-        //     }
-        // });
         http.request({
             url: '/my/order',
             method: 'POST',
@@ -72,33 +54,6 @@ Page({
     },
     toPay: function (e) {
         var that = this;
-        // wx.request({
-        //     url: app.buildUrl("/order/pay"),
-        //     header: app.getRequestHeader(),
-        //     method: 'POST',
-        //     data: {
-        //         order_sn: e.currentTarget.dataset.id
-        //     },
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         if (resp.code != 200) {
-        //             app.alert({"content": resp.msg});
-        //             return;
-        //         }
-        //         var pay_info = resp.data.pay_info;
-        //         wx.requestPayment({
-        //             'timeStamp': pay_info.timeStamp,
-        //             'nonceStr': pay_info.nonceStr,
-        //             'package': pay_info.package,
-        //             'signType': 'MD5',
-        //             'paySign': pay_info.paySign,
-        //             'success': function (res) {
-        //             },
-        //             'fail': function (res) {
-        //             }
-        //         });
-        //     }
-        // });
         http.request({
             url: '/order/pay',
             method: 'POST',
@@ -137,22 +92,6 @@ Page({
         var params = {
             "content": msg,
             "cb_confirm": function () {
-                // wx.request({
-                //     url: app.buildUrl("/order/ops"),
-                //     header: app.getRequestHeader(),
-                //     method: 'POST',
-                //     data: {
-                //         order_sn: order_sn,
-                //         act:act
-                //     },
-                //     success: function (res) {
-                //         var resp = res.data;
-                //         app.alert({"content": resp.msg});
-                //         if ( resp.code == 200) {
-                //             that.getPayOrder();
-                //         }
-                //     }
-                // });
                 http.request({
                     url: '/order/ops',
                     method: 'POST',

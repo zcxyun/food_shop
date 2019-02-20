@@ -26,27 +26,6 @@ Page({
     },
     doComment: function () {
         var that = this;
-        // wx.request({
-        //     url: app.buildUrl("/my/comment/add"),
-        //     header: app.getRequestHeader(),
-        //     method: "POST",
-        //     data: {
-        //         "content": that.data.content,
-        //         "score": that.data.score,
-        //         "order_sn": that.data.order_sn
-        //     },
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         if (resp.code != 200) {
-        //             app.alert({"content": resp.msg});
-        //             return;
-        //         }
-        //
-        //         wx.navigateTo({
-        //             url: "/pages/my/commentList"
-        //         });
-        //     }
-        // });
         http.request({
             url: '/my/add_comment',
             method: 'POST',

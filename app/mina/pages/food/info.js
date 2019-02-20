@@ -55,19 +55,6 @@ Page({
             "id": this.data.info.id,
             "number": this.data.buyNumber
         };
-        // wx.request({
-        //     url: app.buildUrl("/cart/set"),
-        //     header: app.getRequestHeader(),
-        //     method: 'POST',
-        //     data: data,
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         app.alert({"content": resp.msg});
-        //         that.setData({
-        //             hideShopPopup: true
-        //         });
-        //     }
-        // });
         http.request({
             url: '/cart/set',
             method: 'POST',
@@ -142,31 +129,6 @@ Page({
     },
     getInfo: function () {
         var that = this;
-        // wx.request({
-        //     url: app.buildUrl("/food/info"),
-        //     header: app.getRequestHeader(),
-        //     data: {
-        //         id: that.data.id
-        //     },
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         if (resp.code != 200) {
-        //             app.alert({"content": resp.msg});
-        //             wx.navigateTo({
-        //                 url: "/pages/food/index"
-        //             });
-        //             return;
-        //         }
-        //
-        //         that.setData({
-        //             info: resp.data.info,
-        //             buyNumMax: resp.data.info.stock,
-        //             shopCarNum:resp.data.cart_number
-        //         });
-        //
-        //         WxParse.wxParse('article', 'html', resp.data.info.summary, that, 5);
-        //     }
-        // });
         http.request({
             url: '/food/info',
             method: 'POST',
@@ -191,25 +153,6 @@ Page({
     },
     getComments: function () {
         var that = this;
-        // wx.request({
-        //     url: app.buildUrl("/food/comments"),
-        //     header: app.getRequestHeader(),
-        //     data: {
-        //         id: that.data.id
-        //     },
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         if (resp.code != 200) {
-        //             app.alert({"content": resp.msg});
-        //             return;
-        //         }
-        //
-        //         that.setData({
-        //             commentList: resp.data.list,
-        //             commentCount: resp.data.count,
-        //         });
-        //     }
-        // });
         http.request({
             url: '/food/comments',
             method: 'POST',
@@ -234,17 +177,6 @@ Page({
             path: '/pages/food/info?id=' + that.data.info.id,
             success: function (res) {
                 // 转发成功
-                // wx.request({
-                //     url: app.buildUrl("/member/share"),
-                //     header: app.getRequestHeader(),
-                //     method: 'POST',
-                //     data: {
-                //         url: utils.getCurrentPageUrlWithArgs()
-                //     },
-                //     success: function (res) {
-                //
-                //     }
-                // });
                 http.request({
                     url: '/member/share',
                     method: 'POST',

@@ -71,23 +71,6 @@ Page({
     },
     getBannerAndCat: function () {
         var that = this;
-        // wx.request({
-        //     url: app.buildUrl("/food/index"),
-        //     header: app.getRequestHeader(),
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         if (res.statusCode != 200) {
-        //             app.alert({"content": resp.msg});
-        //             return;
-        //         }
-        //
-        //         that.setData({
-        //             banners: resp.banner_list,
-        //             categories: resp.cat_list
-        //         });
-        //         that.getFoodList();
-        //     }
-        // });
         http.request({
             url: '/food/index',
             sCallback: res => {
@@ -132,37 +115,6 @@ Page({
         that.setData({
             processing: true
         });
-
-        // wx.request({
-        //     url: app.buildUrl("/food/search"),
-        //     header: app.getRequestHeader(),
-        //     data: {
-        //         cat_id: that.data.activeCategoryId,
-        //         mix_kw: that.data.searchInput,
-        //         p: that.data.p,
-        //     },
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         if (res.statusCode != 200) {
-        //             app.alert({"content": resp.msg});
-        //             return;
-        //         }
-        //
-        //         var goods = resp.list;
-        //         that.setData({
-        //             goods: that.data.goods.concat( goods ),
-        //             p: that.data.p + 1,
-        //             processing:false
-        //         });
-        //
-        //         if( resp.data.has_more == 0 ){
-        //             that.setData({
-        //                 loadingMoreHidden: false
-        //             });
-        //         }
-        //
-        //     }
-        // });
         http.request({
             url: '/food/search',
             method: 'POST',

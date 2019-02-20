@@ -36,23 +36,6 @@ Page({
             // express_address_id: that.data.default_address.id
             address: JSON.stringify(that.data.address)
         };
-        // wx.request({
-        //     url: app.buildUrl("/order/create"),
-        //     header: app.getRequestHeader(),
-        //     method: 'POST',
-        //     data: data,
-        //     success: function (res) {
-        //         wx.hideLoading();
-        //         var res = res.data;
-        //         if (res.code != 200) {
-        //             app.alert({"content": res.msg});
-        //             return;
-        //         }
-        //         wx.navigateTo({
-        //             url: "/pages/my/order_list"
-        //         });
-        //     }
-        // });
         http.request({
             url: '/order/create',
             method: 'POST',
@@ -98,38 +81,10 @@ Page({
         });
     },
     getOrderInfo: function () {
-        var that = this;
         var data = {
             type: this.data.params.type,
             goods: JSON.stringify(this.data.params.goods)
         };
-        // wx.request({
-        //     url: app.buildUrl("/order/info"),
-        //     header: app.getRequestHeader(),
-        //     method: 'POST',
-        //     data: data,
-        //     success: function (res) {
-        //         var res = res.data;
-        //         if (res.code != 200) {
-        //             app.alert({"content": res.msg});
-        //             return;
-        //         }
-        //
-        //         that.setData({
-        //             goods_list: res.data.food_list,
-        //             default_address: res.data.default_address,
-        //             yun_price: res.data.yun_price,
-        //             pay_price: res.data.pay_price,
-        //             total_price: res.data.total_price,
-        //         });
-        //
-        //         if( that.data.default_address ){
-        //             that.setData({
-        //                  express_address_id: that.data.default_address.id
-        //             });
-        //         }
-        //     }
-        // });
         http.request({
             url: '/order/info',
             method: 'POST',

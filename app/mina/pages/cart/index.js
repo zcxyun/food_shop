@@ -170,16 +170,6 @@ Page({
         })
         this.setPageData(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
         //发送请求到后台删除数据
-        // wx.request({
-        //     url: app.buildUrl("/cart/del"),
-        //     header: app.getRequestHeader(),
-        //     method: 'POST',
-        //     data: {
-        //         goods: JSON.stringify( goods )
-        //     },
-        //     success: function (res) {
-        //     }
-        // });
         http.request({
             url: '/cart/delete',
             method: 'POST',
@@ -190,26 +180,6 @@ Page({
     },
     getCartList: function () {
         var that = this;
-        // wx.request({
-        //     url: app.buildUrl("/cart/index"),
-        //     header: app.getRequestHeader(),
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         if (resp.code != 200) {
-        //             app.alert({"content": resp.msg});
-        //             return;
-        //         }
-        //         that.setData({
-        //             list: resp.data.list,
-        //             saveHidden: true,
-        //             totalPrice: 0.00,
-        //             allSelect: true,
-        //             noSelect: false
-        //         });
-        //
-        //         that.setPageData(that.getSaveHide(), that.totalPrice(), that.allSelect(), that.noSelect(), that.data.list);
-        //     }
-        // });
         http.request({
             url: '/cart/index',
             sCallback: res => {
@@ -233,19 +203,6 @@ Page({
             "id": food_id,
             "number": number
         };
-        // wx.request({
-        //     url: app.buildUrl("/cart/set"),
-        //     header: app.getRequestHeader(),
-        //     method: 'POST',
-        //     data: data,
-        //     success: function (res) {
-        //         var resp = res.data;
-        //         if (resp.code != 200) {
-        //             app.alert({'content': resp.msg});
-        //             return;
-        //         }
-        //     }
-        // });
         http.request({
             url: '/cart/set',
             method: 'POST',
