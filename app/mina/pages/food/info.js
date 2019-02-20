@@ -75,7 +75,8 @@ Page({
             sCallback: res => {
                 app.alert({'content': res.msg});
                 that.setData({
-                    hideShopPopup: true
+                    hideShopPopup: true,
+                    shopCarNum: res.shopCarNum
                 });
             }
         });

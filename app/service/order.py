@@ -57,7 +57,7 @@ class OrderService:
         return {
             'id': data.id,
             'name': data.name,
-            'total_price': str(data.price),
+            'price': str(data.price),
             'pic_url': buildImageUrl(data.main_image),
             'number': self.products_dic[data.id]
         }
@@ -209,6 +209,8 @@ class OrderService:
 
     @staticmethod
     def confirm_order(order):
+        if order.order_status_enum != OrderStatus.DELIVERED:
+            raise OrderException(msg='订单不是已发货状态，不能确认收货成功')
         with db.auto_commit():
             order.order_status_enum = OrderStatus.NOCOMMENT
             db.session.add(order)

@@ -104,7 +104,7 @@ Page({
     },
     catClick: function (e) {
         this.setData({
-            activeCategoryId: e.currentTarget.id
+            activeCategoryId: e.currentTarget.dataset.id
         });
         this.setData({
             loadingMoreHidden: true,

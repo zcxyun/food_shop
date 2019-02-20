@@ -39,7 +39,7 @@ SCORE_SELECT = {
 MINA_APP = {
     'appid': 'wxfdcf36f2bf5d2af2',
     'appkey': '077c598d13e70592c6741f88c348b8b7',
-    'paykey': '',
+    'paykey': '077c598d13e70592c6741f88c348b8b7',  # 需要开通商户平台
     'mch_id': '',
     'callback_url': '/api/order/callback',
     'page_size': 5

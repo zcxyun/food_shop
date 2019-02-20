@@ -1,7 +1,7 @@
 import Base from '../../utils/base.js';
 
 const http = new Base();
-var app = getApp();
+const app = getApp();
 Page({
     data: {},
     onLoad: function () {
@@ -61,25 +61,22 @@ Page({
     },
     //加数量
     jiaBtnTap: function (e) {
-        var that = this;
         var index = e.currentTarget.dataset.index;
-        var list = that.data.list;
+        var list = this.data.list;
         var i = parseInt(index);
         if (list[i].number < list[i].stock) {
             list[i].number++;
-            that.setPageData(that.getSaveHide(), that.totalPrice(), that.allSelect(), that.noSelect(), list);
-            this.setCart(list[parseInt(index)].food_id, list[parseInt(index)].number);
+            this.setCart(list[i].food_id, 1, list);
         }
     },
     //减数量
     jianBtnTap: function (e) {
         var index = e.currentTarget.dataset.index;
         var list = this.data.list;
-        if (list[parseInt(index)].number > 1) {
-            list[parseInt(index)].number--;
-            this.setPageData(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
-
-            this.setCart(list[parseInt(index)].food_id, list[parseInt(index)].number);
+        var i = parseInt(index)
+        if (list[i].number > 1) {
+            list[i].number--;
+            this.setCart(list[i].food_id, -1, list);
         }
     },
     //编辑默认全不选
@@ -230,7 +227,7 @@ Page({
             }
         });
     },
-    setCart: function (food_id, number) {
+    setCart: function (food_id, number, list) {
         var that = this;
         var data = {
             "id": food_id,
@@ -254,6 +251,9 @@ Page({
             method: 'POST',
             data: data,
             sCallback: res => {
+                that.setPageData(
+                    that.getSaveHide(), that.totalPrice(),
+                    that.allSelect(), that.noSelect(), list);
             },
             eCallback: res => {
                 app.alert({'content': res.msg});

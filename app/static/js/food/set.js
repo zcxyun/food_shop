@@ -33,7 +33,7 @@ var food_set_ops = {
         var idNode = $(".wrap_food_set input[name=id]");
         var catIdNode = $(".wrap_food_set select[name=cat_id]");
         var nameNode = $(".wrap_food_set input[name=name]");
-        var priceNode = $(".wrap_food_set input[name=total_price]");
+        var priceNode = $(".wrap_food_set input[name=price]");
 
         var summaryNode = $("#editor");
 

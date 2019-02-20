@@ -18,7 +18,7 @@ class Order(Base):
     total_count = Column(Integer, nullable=False, comment='订单商品总数')
     freight = Column(DECIMAL, default=0.00, comment='运费')
     pay_price = Column(DECIMAL, nullable=False, comment='订单实付金额')
-    pay_time = Column(Integer, nullable=False, comment='会员支付到账时间')
+    pay_time = Column(Integer, comment='会员支付到账时间')
     pay_sn = Column(String(128), comment='第三方流水号')
     prepay_id = Column(String(128), comment='第三方预付ID,订单微信支付的预订单id（用于发送模板消息）')
     note = Column(Text, comment='备注信息')
@@ -81,6 +81,8 @@ class Order(Base):
 
     @property
     def format_pay_time(self):
+        if not self.pay_time:
+            return '未支付'
         return date_to_str(datetime.fromtimestamp(self.pay_time))
 
     # @property

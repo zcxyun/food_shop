@@ -3,7 +3,7 @@ import json
 from flask import current_app, request, render_template, jsonify
 from flask_login import login_required
 
-from app.libs.enums import OrderStatus
+from app.libs.enums import OrderStatus, Status
 from app.libs.error_codes import OrderException, Success
 from app.libs.redprint import Redprint
 from app.models import Order, db
@@ -60,9 +60,15 @@ def pay_info(id):
 def account():
     page = int(SplitPageForm().validate().page.data)
     total_income = 0.00
-    orders_pagination = Order.query.filter_by().order_by(
-        Order.id.desc()).paginate(
-        page, current_app.config['PAGE_SIZE'], error_out=False)
+    orders_pagination = Order.query.filter(
+        Order.order_status != OrderStatus.UNPAID.value,
+        Order.order_status != OrderStatus.CLOSE.value,
+        Order.status == Status.EXIST.value
+    ).order_by(
+        Order.id.desc()
+    ).paginate(
+        page, current_app.config['PAGE_SIZE'], error_out=False
+    )
     if orders_pagination:
         total_income = sum([order.total_price for order in orders_pagination.items])
     params = {

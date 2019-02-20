@@ -11,7 +11,6 @@ App({
         restUrl:"http://localhost:5000/api/v1"
     },
     tip:function( params ){
-        var that = this;
         var title = params.hasOwnProperty('title')?params['title']:'提示';
         var content = params.hasOwnProperty('content')?params['content']:'';
         wx.showModal({

@@ -71,3 +71,15 @@ class ScoreException(APIException):
     code = 400
     error_code = 3001
     msg = '评分不符合规范'
+
+
+class CartException(APIException):
+    code = 400
+    error_code = 4001
+    msg = '购物车内商品数量不能小于0'
+
+
+class WeChatException(APIException):
+    code = 500
+    error_code = 5001
+    msg = '微信服务器异常'

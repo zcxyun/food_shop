@@ -1,10 +1,11 @@
 from flask import url_for, jsonify, current_app, g
-from sqlalchemy import or_
+from sqlalchemy import or_, func
 
+from app.libs.enums import Status
 from app.libs.redprint import Redprint
 from app.libs.token import auth
 from app.libs.utils import buildImageUrl
-from app.models import FoodCat, Food, MemberCart, MemberComment, Member
+from app.models import FoodCat, Food, MemberCart, MemberComment, Member, db
 from app.validators.api_forms.Food_forms import FoodSearchForm
 from app.validators.api_forms.common_forms import IDMustBePositive
 from app.view_model.api_vm.comment_vm import CommentCollection
@@ -79,8 +80,17 @@ def info():
     food = Food.query.filter_by(id=id).first_or_404_deleted(msg='美食已下架')
     member = g.member
     cart_count = 0
-    if member:
-        cart_count = MemberCart.query.filter_by(food_id=food.id, member_id=member.id).count()
+    cart = MemberCart.query.filter_by(food_id=food.id, member_id=member.id).first()
+    if cart:
+        cart_count = cart.quantity
+
+        # cart_count = db.session.query(
+        #     func.sum(MemberCart.quantity).label('cart_count')
+        # ).filter(
+        #     MemberCart.food_id == food.id,
+        #     MemberCart.member_id == member.id,
+        #     MemberCart.status == Status.EXIST.value
+        # ).first()
 
     info = FoodViewModel(food).hide('min_price', 'pic_url')
     resp = {

@@ -38,22 +38,24 @@ class WeChatService:
         headers = {'Content-Type': 'application/xml'}
         url = "https://api.mch.weixin.qq.com/pay/unifiedorder"
         r = requests.post(url=url, data=xml_data, headers=headers)
-        r.encoding = 'utf-8'
-        current_app.logger.info(r.text)
         if r.status_code == 200:
-            prepay_id = self.xml_2_dict(r.text).get('prepay_id')
-            pay_sign_data = {
-                'appId': pay_data.get('appId'),
-                'timeStamp': pay_data.get('out_trade_no'),
-                'nonceStr': pay_data.get('nonceStr'),
-                'package': 'prepay_id={}'.format(prepay_id),
-                'signType': 'MD5'
-            }
-            pay_sign = self.create_sign(pay_sign_data)
-            pay_sign_data.pop('appId')
-            pay_sign_data['paySign'] = pay_sign
-            pay_sign_data['prepay_id'] = prepay_id
-            return pay_sign_data
+            r.encoding = 'utf-8'
+            current_app.logger.info(r.text)
+            data = self.xml_2_dict(r.text)
+            if data['return_code'] == 'SUCCESS' and data['result_code'] == 'SUCCESS':
+                prepay_id = data.get('prepay_id')
+                pay_sign_data = {
+                    'appId': pay_data.get('appId'),
+                    'timeStamp': pay_data.get('out_trade_no'),
+                    'nonceStr': pay_data.get('nonceStr'),
+                    'package': 'prepay_id={}'.format(prepay_id),
+                    'signType': 'MD5'
+                }
+                pay_sign = self.create_sign(pay_sign_data)
+                pay_sign_data.pop('appId')
+                pay_sign_data['paySign'] = pay_sign
+                pay_sign_data['prepay_id'] = prepay_id
+                return pay_sign_data
         return False
 
     @staticmethod

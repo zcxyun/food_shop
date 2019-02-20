@@ -83,10 +83,10 @@ def listImage():
 
     list = query.order_by(Image.id.desc()).limit(page_size).all()
     images = []
-
     if list:
+        image_path = current_app.config['APP']['domain'] + current_app.config['UPLOAD']['prefix_url']
         for item in list:
-            images.append({'url': url_for('static', filename='upload/' + item.file_key)})
+            images.append({'url': image_path + item.file_key})
             start = item.id
     resp['list'] = images
     resp['start'] = start

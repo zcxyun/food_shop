@@ -7,7 +7,6 @@ from app.libs.enums import Status
 from app.libs.redprint import Redprint
 from app.libs.utils import date_to_str
 from app.models import StatDailySite
-from app.validators.cms_forms.stat_forms import StatForm
 
 cms = Redprint('chart')
 

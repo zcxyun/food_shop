@@ -17,6 +17,8 @@ class OrderCreateForm(GoodsForm):
             data = json.loads(field.data)
         except Exception:
             raise ValidationError('地址为无效的json格式')
+        if not data:
+            raise ValidationError('地址不能为空')
         self.address.data = data
 
 

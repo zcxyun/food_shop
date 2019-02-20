@@ -3,7 +3,7 @@ from app.view_model.base import BaseViewModel
 
 
 class CartViewModel(BaseViewModel):
-    show_keys = ['id', 'number', 'stock', 'food_id', 'name', 'total_price', 'pic_url', 'active']
+    show_keys = ['id', 'number', 'stock', 'food_id', 'name', 'price', 'pic_url', 'active']
 
     def __init__(self, cart):
         food = cart.food

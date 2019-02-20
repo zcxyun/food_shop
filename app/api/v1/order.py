@@ -1,7 +1,7 @@
 from flask import g, jsonify, current_app
 
 from app.libs.enums import ClientType
-from app.libs.error_codes import OrderException
+from app.libs.error_codes import OrderException, WeChatException
 from app.libs.redprint import Redprint
 from app.libs.token import auth
 from app.models import Member, db
@@ -60,7 +60,7 @@ def pay():
         'appid': mina_config['appid'],
         'mch_id': mina_config['mch_id'],
         'nonce_str': wechat.get_nonce_str(),
-        'body': '订餐',
+        'body': 'order_food',
         'out_trade_no': order.order_sn,
         'total_fee': int(order.total_price * 100),
         'notify_url': notify_url,
@@ -73,6 +73,8 @@ def pay():
         with db.auto_commit():
             order.prepay_id = pay_info['prepay_id']
             db.session.add(order)
+    else:
+        raise WeChatException()
     resp = {
         'pay_info': pay_info
     }

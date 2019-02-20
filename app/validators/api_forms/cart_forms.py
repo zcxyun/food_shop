@@ -8,8 +8,7 @@ from app.validators.base import BaseForm
 
 
 class SetCartForm(IDMustBePositive):
-    number = IntegerField(validators=[DataRequired(message='商品数量不能为空'),
-                                      NumberRange(min=0, message='商品数量必须为正整数')])
+    number = IntegerField(validators=[DataRequired(message='商品数量不能为空')])
     # number = StringField(validators=[DataRequired(message='商品数量不能为空')])
     #
     # def validate_number(self, field):

@@ -64,6 +64,7 @@ Page({
                 });
             },
             eCallback: res => {
+                wx.hideLoading();
                 app.alert({'content': res.msg});
             }
         });

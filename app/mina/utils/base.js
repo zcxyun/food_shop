@@ -1,6 +1,7 @@
 import Token from 'token.js';
 import {base64_encode} from "./base64";
 import Config from 'config';
+const app = getApp();
 
 export default class Base {
     constructor() {
@@ -43,12 +44,19 @@ export default class Base {
                             this._refetch(params);
                         }
                     } else {
+                        if (res.data.error_code === 1000) {
+                            let msg = res.data.msg;
+                            for (const i in msg) {
+                                res.data.msg = msg[i][0];
+                                break;
+                            }
+                        }
                         params.eCallback && params.eCallback(res.data);
                     }
                 }
             },
             fail: err => {
-                console.log(err);
+                app.alert({'content': err})
             }
         });
     }

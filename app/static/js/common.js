@@ -122,7 +122,7 @@ var common_ops = {
         }, 100);
     },
     buildUrl: function (path, params) {
-        var url = "" + path;
+        var url = "http://localhost:5000" + path;
         var _paramUrl = "";
         if (params) {
             _paramUrl = Object.keys(params).map(function (k) {
