@@ -24,7 +24,7 @@
             </view>
             <view data-id="{{item.order_sn}}" bindtap="orderDetail">
                 <scroll-view class="goods-img-container" scroll-x="true" >
-                    <view class="img-box" wx:for="{{item.goods_list}}" wx:for-item="itemGood">
+                    <view class="img-box" wx:for="{{item.goods_list}}" wx:for-item="itemGood" wx:key='id'>
                         <image src="{{itemGood.main_image}}" class="goods-img"></image>
                     </view>
                 </scroll-view>
