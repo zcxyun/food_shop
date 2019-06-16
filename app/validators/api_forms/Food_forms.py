@@ -7,7 +7,7 @@ from app.validators.base import BaseForm
 class FoodSearchForm(BaseForm):
     cat_id = IntegerField(validators=[NumberRange(min=0, message='商品种类ID必须为正整数')], default=0)
     query_key = StringField(default='')
-    page = IntegerField(validators=[NumberRange(min=1, message='商品种类ID必须为正整数')], default=1)
+    page = IntegerField(validators=[NumberRange(min=1, message='商品页数必须为正整数')], default=1)
 
     # def validate_cat_id(self, field):
     #     if not field.data.isdigit() or int(field.data) < 0:

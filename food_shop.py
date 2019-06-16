@@ -8,7 +8,6 @@ from app.models import AppErrorLog
 
 app = create_app()
 
-
 @app.errorhandler(Exception)
 def framework_errors(e):
     if isinstance(e, APIException):
